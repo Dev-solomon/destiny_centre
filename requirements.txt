@@ -1,0 +1,16 @@
+flask
+wheel
+flask_bcrypt
+requests
+Flask-Cors
+stripe
+python-dotenv
+termcolor
+Jinja2
+cloudinary
+Flask-OAuthlib
+Authlib
+pymongo
+jwt
+flask_caching
+pytz

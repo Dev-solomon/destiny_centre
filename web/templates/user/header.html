@@ -1,0 +1,350 @@
+<nav
+class="relative flex items-center border-b border-secondary-200 px-5 py-[10px] text-xl capitalize md:px-[60px] md:py-7 lg:px-[4.6%] lg:py-[30px]"
+>
+<a href="/"><img
+  src="../../static/user/assets/lizie 1.svg"
+  alt="company logo"
+  class="size-[40px] md:size-[52px]"
+/></a>
+
+
+<ul class="flex items-center justify-between lg:hidden" style="width: 100%; position: relative;">
+  <li class="ml-auto p-3 cursor-pointer lg:hidden" style="list-style-type: none; float: right; margin-right: 0;">
+    <button id="open_mobile_cart" class="flex gap-[10px]">
+      <i class="fa fa-shopping-cart"></i>
+    </button>
+  </li>
+</ul>
+
+
+<button class="ml-auto lg:hidden" aria-label="Open menu" onclick="toggleSidebar()">
+  <img
+    src="../../static/user/assets/icons/menu.svg"
+    alt="Menu icon"
+    class="size-6 md:size-8"
+  />
+</button>
+
+ 
+
+<!-- Sidebar -->
+<div class="sidebar" id="sidebar_menu">
+  <ul>
+    <li style="margin-bottom: 40px; text-align: center;">
+      {% if user is defined %}
+        <form action="/api/user/logout" method="post" class="form" enctype="multipart/form-data">
+          <button
+            class="rounded-lg border borer-white text-primary-600 bg-white px-[38px] py-3 capitalize lg:block"
+          >
+            <i class="fa fa-sign-out-alt"></i>
+            <span class="fs-6 p-2">{{user['fullName']}}</span>
+          </button>
+        </form>
+      {% else %}
+        {% if show_login is defined and show_login != "no" %}
+          <a href="/login">
+            <button
+              class="rounded-lg border borer-white text-primary-600 bg-white px-[38px] py-3 capitalize lg:block"
+            >
+              login
+            </button>
+          </a>
+        {% endif %}
+      {% endif %}
+    </li>
+
+    <li><a href="/" class="active"><i class="fa fa-home" aria-hidden="true"></i> Home</a></li>
+    <li><a href="/about-us"> <i class="fa fa-info-circle" aria-hidden="true"></i> About</a></li>
+    <li><a href="/catalog"> <i class="fa fa-cart-plus" aria-hidden="true"></i> Shop</a></li>
+    <li><a href="/contact-us"> <i class="fa fa-phone-square" aria-hidden="true"></i> Contact</a></li>
+    {% if user is defined %}
+    <li><a href="/dashboard"> <i class="fa fa-dashboard" aria-hidden="true"></i> Dashboard</a></li>
+    <li><a href="/orders"> <i class="fa fa-shopping-bag" aria-hidden="true"></i> My Orders</a></li>
+    <li><a href="/update-profile"> <i class="fa fa-user" aria-hidden="true"></i> Profile</a></li>
+    <li><a href="/update-password"><i class="fa fa-lock" aria-hidden="true"></i> Password</a></li>
+    {% endif %}
+
+
+    
+    {% if user is defined and  user['isAdmin'] == True %}
+      <li><a href="/api/sellers/"> <i class="fa fa-bullhorn" aria-hidden="true"></i> Seller Account</a></li>
+      {% elif user is defined and user['isAdmin'] == False %}
+      <li><a href="/api/sellers/"> <i class="fa fa-bullhorn" aria-hidden="true"></i> Become A Seller</a></li>
+      {% endif %}
+  </ul>
+
+</div>
+
+
+<style>
+  /* Sidebar styles */
+.sidebar {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: rgb(19 127 160);
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 50px;
+  z-index: 1000;
+}
+
+.sidebar ul li {
+  padding: 5px;
+}
+
+.sidebar ul li a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 20px;
+  color: white;
+  display: block;
+  transition: 0.3s;
+}
+
+
+/* Transition for sidebar when toggled */
+.sidebar.open {
+  width: 240px;
+}
+
+</style>
+
+
+<ul class="ml-[8%] hidden flex-grow items-center lg:flex">
+  <li class="ml-auto">
+    <ul class="ml-auto flex items-center gap-4">
+      <li class="p-3"><a href="/catalog">shop</a></li>
+      <li class="p-3"><a href="/about">about us</a></li>
+      <li class="p-3"><a href="contact">contact us</a></li>
+    </ul>
+  </li>
+  <li class="ml-16 w-[32%]">
+    <form action="/catalog" method="get" class="relative w-full">
+      <div
+        class="absolute left-[14px] top-1/2 flex -translate-y-1/2 transform items-center justify-center rounded-full bg-primary-100 p-[3px]"
+      >
+        <img src="../../static/user/assets/icons/search.svg" />
+      </div>
+      <input
+        type="text"
+        name="product_name"
+        class="w-full rounded-lg border border-[#D0D5DD] py-3 pl-[50px] pr-[14px] text-base shadow-sm placeholder:font-extralight placeholder:text-[#667085]"
+        placeholder="Search Anything Here..."
+      /> 
+    </form>
+  </li>
+  {% if show_cart is defined and show_cart == "no" %}
+  <li class="ml-auto p-3 cursor-pointer">
+    <a href="/dashboard" target="_blank" class="flex gap-[10px] ">
+      <img
+      src="../../static/user/assets//icons/store.svg"
+      alt=""
+      class="size-7"
+    />
+    </a>
+  </li> 
+  {% else %}
+  
+  <li class="ml-auto p-3 cursor-pointer">
+    <button id="open_cart" class="flex gap-[10px] ">
+      <i class="fa fa-shopping-cart"></i>
+    </button>
+  </li>
+  <li class="ml-auto p-3 cursor-pointer">
+    <a href="/dashboard" target="_blank" class="flex gap-[10px] ">
+      <img
+      src="../../static/user/assets//icons/store.svg"
+      alt=""
+      class="size-7"
+    />
+    </a>
+  </li> 
+  {% endif %}
+  
+  <li class="ml-4">
+   
+    {% if user is defined %}
+    <form action="/api/user/logout" method="post" class="form" enctype="multipart/form-data">
+    
+      <button
+      class="hidden rounded-lg border border-primary-600 px-[38px] py-3 capitalize text-primary-600 hover:bg-primary-600 hover:text-white lg:block"
+    >
+    <i class="fa fa-sign-out-alt"></i>
+    <i class="fs-6 p-2"   >{{user['fullName']}}</i>
+    </button>
+  </form>
+    {% else %}
+    {% if show_login is defined and show_login != "no" %}
+    <a href="/login">
+      <button
+      class="hidden rounded-lg border border-primary-600 px-[38px] py-3 capitalize text-primary-600 hover:bg-primary-600 hover:text-white lg:block"
+    >
+      login
+    </button>
+    {% endif %}
+  </a>
+      {% endif %}
+   
+    
+  </li>
+</ul>
+
+<div id="overlay" class="overlay"></div>
+
+
+<!-- Cart popup -->
+<div id="cart_box"
+  class="absolute right-0 top-[100%] z-[80] h-fit w-full border border-[#F2F4F7] bg-white pb-28 md:max-w-[640px]"
+  style="z-index: 500; display: none;">
+
+  {% if cart is defined and cart == [] %}
+  <div
+  class="flex items-center gap-4 border-b border-primary-100 px-5 pb-7 pt-10"
+>
+  <img
+    src="../../static/user/assets//icons/shopping-bag-black.svg"
+    alt=""
+    class="size-7"
+  />
+  <span class="text-xl">Cart</span>
+  <button id="close_cart" class="ml-auto">
+    <i  class="fa-solid fa-x size-3"></i>
+    
+  </button>
+</div>
+
+<div class="mt-[60px] flex flex-col gap-10 px-[60px]">
+  <div class="flex flex-col" style="text-align: center; color: rgb(39 166 205);">
+    <i class="fa fa-shopping-basket"></i>
+    CART IS EMPTY
+     </div>
+
+   
+  {% else %}
+  <div
+  class="flex items-center gap-4 border-b border-primary-100 px-5 pb-7 pt-10"
+>
+  <img
+    src="../../static/user/assets//icons/shopping-bag-black.svg"
+    alt=""
+    class="size-7"
+  />
+  <span class="text-xl">Cart</span>
+  <button id="close_cart" class="ml-auto">
+    <i  class="fa-solid fa-x size-3"></i>
+    
+  </button>
+</div>
+<div class="mt-[60px] flex flex-col gap-10 px-[60px]">
+  <div class="flex flex-col">
+  {% for item in cart %}
+  {% set color, size = item['variant'].split('-') %}
+ 
+
+
+    
+    
+    <div class="flex flex-col gap-5 py-8">
+      <div class="flex gap-7">
+        <img
+          src="{{item['images'][0]}}"
+          alt="{{item['images'][0]}}"
+          class="size-14 rounded-lg" style="width: inherit;"
+        />
+        <div class="flex w-full flex-col">
+          <h3 class="text-lg" style="color: rgb(94, 93, 93);">{{item['title']}}</h3>
+          <p class="text-sm" style="color: rgb(94, 93, 93);">Color:{{color | lower}}, Size: {{size | lower}}</p>
+          
+        </div>
+      </div>
+      <div class="flex items-center justify-between">
+        <div class="flex items-center gap-[14px] md:gap-5">
+          <span class="mt-4 text-lg" style="color: rgb(94, 93, 93);">${{item['price'] | float * item['qty'] | float}}</span>
+        </div>
+        <form action="/api/orders/delete_from_cart" method="post">
+          <input type="hidden" name="variant" value="{{item['variant']}}" />
+          <input type="hidden" name="product_id" value="{{item['product_id']}}" />
+          <button
+          class="flex size-10 items-center justify-center rounded-full p-2 shadow-[0px_2px_16px_0px_#54545424]"
+        >
+          <img src="../../static/user/assets/icons/trash.svg" alt="" />
+        </button>
+        </form>
+        
+      </div>
+    </div>
+
+    <hr style="height: 0; margin-top: 10px;
+    margin-bottom: 10px;"/>  
+{% endfor %}
+</div>
+ 
+
+  
+  
+      
+          <div class="flex flex-col gap-4">
+            <div class="flex justify-between text-lg">
+              <span>Total Products</span>
+            {{cart | count}}
+            </div>
+            <div class="flex justify-between text-lg">
+              <span>Total</span>
+              {% set my_array = [] %}  {# Create an empty list #}
+
+              {% for item in cart %}
+                  {% set my_array = my_array.append(item.qty * item.price) %}  {# Add the total price of each item to the array #}
+              {% endfor %}
+              
+              {% set sub_total_price = my_array | sum %}  {# Sum all the values in the array #}
+              {% set tax_price = 50 %}
+              {% set shipping_cost = 10 %}
+              {% set total_price  = sub_total_price + tax_price + shipping_cost %}
+              {{ sub_total_price }}  {# Display the sum of all values in the array #}
+              
+
+
+              
+              
+
+             
+
+              
+              
+            </div>
+          </div>
+     
+
+
+          
+          <form action="/api/orders/create" method="post">
+
+            {% if user is defined %}
+            <input type="hidden" name="user" value="{{user['_id']}}" />
+            {% endif %}
+            <input type="hidden" name="orderItems" value="{{cart}}" />
+            <input type="hidden" name="payments" value="{&quot;status&quot;: &quot;pending&quot;}" />
+            <input type="hidden" name="sub_total_price" value="{{sub_total_price}}" />
+            <input type="hidden" name="total_price" value="{{total_price}}" />
+            <input type="hidden" name="tax_price" value="{{tax_price}}" />
+            <input type="hidden" name="shipping_address" value="{&quot;shipping_cost&quot;: {{shipping_cost}} }" />
+
+
+
+
+            <button style="padding-right: 20px;padding-left: 20px;"
+            class="flex justify-center rounded-lg bg-primary-600 py-4 text-lg text-white hover:bg-primary-500"
+          >
+            Place Order
+          </button>
+          </form>
+   
+    {% endif %}
+    
+  </div>
+  
+</div>
+</nav>
