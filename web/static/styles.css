@@ -1,0 +1,360 @@
+
+html {
+  height: 100%;
+}
+
+/* CODE FOR THE INDEX PAGE WHICH IS ALSO THE HOMPAGE LAPTOP VIEW */
+header.dc_header {
+  background-image: url("../static/assets/bg_dc.jpg");
+  background-repeat: no-repeat;
+  height: 800px;
+  background-position: center;
+  background-size: cover;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+header.dc_header::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: inherit;
+  background-color: rgba(0, 0, 0, 0.6); /* Dark overlay */
+  z-index: 1;
+}
+header.dc_header * {
+  position: relative;
+  z-index: 2;
+}
+header.dc_header h2{
+  text-align: center;
+  font-size: 80px;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  font-weight: 700;
+  line-height: 100%;
+  color: #FFFFFF;
+  margin-top: 80px;
+}
+header.dc_header p{
+  text-align: center;
+  font-size: 24px;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  font-weight: 500;
+  line-height: 100%;
+  color: #FFFFFF;
+  margin-top: 80px;
+}
+
+div.navbar{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+div.navbar img{
+  width: 80px;
+  height: 80px;
+  margin: 20px 40px;
+}
+
+ul.navbar_list{
+  display: flex;
+  flex-direction: row;
+  gap: 30px;
+  text-decoration: none;
+  list-style-type: none;
+  margin: 20px 40px;
+}
+
+ul.navbar_list li{
+  font-size: 20px;
+  color: white;
+}
+header.dc_header div.header-info{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 100px;
+  margin-top: 85px;
+  margin-bottom: 20px;
+}
+header.dc_header div.header-info .info {
+  width: 450px;
+  display: flex;
+  flex-direction: column;
+  color: #1B1C1E;
+  background-color: rgba(255, 255, 255, 0.8); /* 80% transparency */
+  border-radius: 12px;
+  padding: 16px 32px;
+  gap: 10px;
+}
+header.dc_header div.header-info .info div{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.info-1{
+  font-size: 14px;
+  font-weight: 400;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+.info-2{
+  font-size: 20px;
+  font-weight: 500;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+div.daily-prayer{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 10px;
+  padding: 20px 60px;
+  margin-top: 60px;
+}
+.dp-image img{
+  width: 700px;
+  height: 500px;
+}
+.dp-caption{
+  font-size: 72px;
+  font-weight: 700px;
+  color: #4A0404;
+  line-height: 120%;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+.dp-prayer{
+  font-size: 24px;
+  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-weight: 200;
+  line-height: 150%;
+  border-left: 16px solid #242220;
+  padding: 15px;
+  height: inherit;
+}
+div.vid{
+  text-align: center;
+  margin-top: 30px;
+}
+div.vid iframe{
+  width: 1200px;
+  height: 680px; 
+  border-radius: 10px;
+}
+div.schedule{
+  padding: 40px 100px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  background-color: #4a0404;
+  margin-top: 60px;
+}
+.schedule h3{
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-size: 60px;
+  font-weight: 400;
+  line-height: 120%;
+  background: radial-gradient(circle, white, #2B71FC); /* Gradient */
+  -webkit-background-clip: text; /* For Webkit browsers */
+  -webkit-text-fill-color: transparent; /* Makes the text transparent */
+}
+.schedule span{
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 150%;
+  color: white;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+div.schedule-info {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 2px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+div.schedule-info div.s-info{
+  width: 450px;
+  display: flex;
+  flex-direction: column;
+  color: #1B1C1E;
+  background-color: rgba(255, 255, 255, 0.969); /* 80% transparency */
+  border-radius: 6px;
+  padding: 8px 16px;
+  gap: 10px;
+}
+div.schedule-info div.s-info  div{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+div.s-info  .info-1{
+  font-size: 20px;
+  font-weight: 400;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  background: linear-gradient(to right, #686e79,#250202); /* Gradient */
+  -webkit-background-clip: text; /* For Webkit browsers */
+  -webkit-text-fill-color: transparent; /* Makes the text transparent */
+}
+div.s-info  .info-2{
+  font-size: 20px;
+  font-weight: 500;
+  color: #000000;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+div.mp{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-top: 20px;
+  padding: 20px 60px;
+}
+div.mp h3{
+  font-size: 72px;
+  font-weight: 700px;
+  color: #4A0404;
+  line-height: 120%;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+.sec-1,.sec-2{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  padding: inherit;
+}
+.sec-1 li, .sec-2 li{
+  font-size: 28px;
+  font-weight: 700;
+  line-height: 120%;
+  color: #1B1C1E;
+  list-style-type: disc;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+.sec-1 p, .sec-2 p{
+  width: 300px;
+  font-weight: 400;
+  color: #4F4F4F;
+  size: 24px;
+  line-height: 150%;
+}
+.sec-2 img{
+  width: 680px;
+  height: 450px;
+}
+div.daily-quote{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+div.daily-quote .quote{
+  font-weight: 700;
+  text-align: center;
+  color: #000000;
+  font-size: 144px;
+}
+div.daily-quote p{
+  text-align: center;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 36px;
+  color: #323335;
+  line-height: 120%;
+  font-style: italic;
+}
+div.daily-quote .speaker{
+  font-weight: 700;
+  text-align: center;
+  color: #000000;
+  font-size: 24px;
+}
+div.testimonies {
+  padding: 20px 60px;
+  position: relative;
+  background-color: #F8F9FA;
+  padding: 20px; /* Ensures content doesn’t touch edges */
+  color: white; /* Change text color for readability */
+}
+.testimonial-image {
+  width: 600px;   /* Set image width */
+  max-height: 100%;  /* Set image height */
+  object-fit: cover; /* Ensures the image covers the entire div without distortion */
+  position: absolute; /* Position the image behind the content */
+  top: 0;
+  right: 0;
+  bottom: 0;
+  padding: 10px;
+  z-index: 1; /* Keeps the image behind the text */
+}
+h3.testimonies{
+  font-size: 72px;
+  font-weight: 700px;
+  color: #4A0404;
+  line-height: 120%;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  padding: 20px 60px;
+}
+div.testimony{
+  width: 950px;
+  height: 380px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 10px;
+  background-color: #FFFFFF;
+  padding: 10px;
+  border-radius: 20px;
+  margin: 0px auto;
+  position: relative; /* Ensures the text appears above the background */
+  z-index: 1;
+}
+.testimony {
+   /* Keeps text on top of the background */
+  background: rgba(0, 0, 0, 0.5); /* Optional: Adds a semi-transparent dark overlay */
+  padding: 15px;
+  border-radius: 10px;
+}
+span.testifier{
+  font-size: 32px;
+  font-weight: 400;
+  line-height: 120%;
+  text-align: center;
+  color: #1B1C1E;
+}
+span.message{
+  font-weight: 400px;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  font-size: 24px;
+  line-height: 150%;
+  text-align: center;
+  color: #4F4F4F;
+}
+footer{
+  display: flex;
+  flex-direction: column;
+  background-color: #4A0404;
+  padding: 20px ;
+}
+footer img{
+  width: 100px;
+  height: 100px;
+  margin: 30px auto;
+}
+footer p{
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 150%;
+  color: #FFFFFF99;
+  text-align: center;
+}
+footer .socials{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 20px;
+}
+.socials i{
+  width: 50px;
+  height: 50px;
+  color: #FFFFFF;
+}
+
+
+/* CODE FOR THE ABOUT US PAGE LAPTOP VIEW */

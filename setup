@@ -42,7 +42,7 @@ SECRET_KEY=`cat /dev/urandom | head -c 24 | base64`
 FLASK_DOMAIN="localhost"
 FLASK_PORT_DEFAULT=5000
 FLASK_DIRECTORY="$(pwd)/api/"
-MONGO_HOSTNAME_DEFAULT="mongodb+srv://SolomonNtia:solomon7@cluster0.6ocpeqp.mongodb.net/"
+MONGO_HOSTNAME_DEFAULT="mongodb+srv://SolomonNtia:%40Jedidiah7@cluster0.6ocpeqp.mongodb.net/"
 
 # Domain the Flask app will be running on
 read -p "Flask App Domain [$FLASK_DOMAIN]: " FLASK_DOMAIN

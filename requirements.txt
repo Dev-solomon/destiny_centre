@@ -3,7 +3,6 @@ wheel
 flask_bcrypt
 requests
 Flask-Cors
-stripe
 python-dotenv
 termcolor
 Jinja2
@@ -13,4 +12,5 @@ Authlib
 pymongo
 jwt
 flask_caching
+dateutil
 pytz

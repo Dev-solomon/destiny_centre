@@ -37,7 +37,7 @@ def token_required(f):
 				if not current_user:
 					raise Exception("User not found")
 			except Exception as e:
-				return make_response(redirect(url_for('user.user_login'))) 
+				return make_response(redirect(url_for('user_login'))) 
 
 		# if google_access != None:
 		# 	try: 
@@ -59,7 +59,7 @@ def admin_required(f):
 		# print(access_token)
   
 		if not access_token:
-			return make_response(redirect(url_for('user.user_login'))) 
+			return make_response(redirect(url_for('user_login'))) 
 
 		try:
 			data = jwt.decode(access_token, app.config['SECRET_KEY'],  algorithms=["HS256"])
@@ -77,7 +77,7 @@ def set_cookies(token, redirect_url):
   return resp
 
 def del_cookies():
-    resp = make_response(redirect(url_for('user.user_login', message="Email Not Registered"))) 
+    resp = make_response(redirect(url_for('user_login', message="Email Not Registered"))) 
     resp.delete_cookie('session')
     return resp
 
