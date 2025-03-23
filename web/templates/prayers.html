@@ -5,19 +5,7 @@
 <body>
 
     <header class="pr_header">
-        <div class="navbar">
-            <a href="/"><img src="../static/assets/dclogo.png"></a>
-
-            <ul class="navbar_list">
-                <li>Home</li>
-                <li>About</li>
-                <li>FaQs</li>
-                <li>Sermons</li>
-                <li>Request Prayer</li>
-            </ul>
-        </div>
-
-        <hr class="hr" style="color: white;">
+       {% include 'link.html' %}
 
         <h2 class="navbar_caption">
             WE ARE HERE FOR YOU - LET US <br> PRAY TOGETHER.
@@ -137,21 +125,7 @@
     </div>
 
 
-    <h3 class="testimonies">
-        TESTIMONIES
-      </h3>
-      <div class="testimonies">
-        <div style="padding: 80px;" class="tsx">
-          <img src="../static/assets/tvector.png" alt="Testimonial Image" class="testimonial-image">
-          <div class="testimony">
-            <span class="testifier">- Life Frank</span>
-            <span class="message">Before I found Destiny Centre, I felt lost and uncertain about my faith. I was searching for
-              peace, but nothing seemed to fill the emptiness inside. From the moment I walked through the doors of this
-              church, I was welcomed with open arms and felt an overwhelming sense of love and belonging.</span>
-          </div>
-        </div>
-      
-      </div>
+    {% include 'testimonies.html' %}
 
 
 

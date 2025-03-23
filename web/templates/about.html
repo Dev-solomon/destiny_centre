@@ -5,19 +5,7 @@
 <body>
 
     <header class="ab_header">
-        <div class="navbar">
-           <a href="/"><img src="../static/assets/dclogo.png"></a> 
-
-            <ul class="navbar_list">
-                <li>Home</li>
-                <li>About</li>
-                <li>FaQs</li>
-                <li>Sermons</li>
-                <li>Request Prayer</li>
-            </ul>
-        </div>
-
-        <hr class="hr" style="color: white;">
+        {% include 'link.html' %}
         <h2 class="navbar_caption">A CHURCH FOR EVERYONE – <br> GROWING IN FAITH TOGETHER.</h2>
 
     </header>
@@ -212,7 +200,7 @@
         }
         }
     </style>
-    <div class="faqs">
+    <div class="faqs" id="faqs">
         <h3 class="ab-h3">FAQs</h3>
         <div class="container">
             <div class="accordion" id="accordionExample">

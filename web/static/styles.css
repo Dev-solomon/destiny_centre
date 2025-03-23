@@ -73,6 +73,11 @@ ul.navbar_list {
   margin: 20px 40px;
 }
 
+ul.navbar_list a{
+  text-decoration: none;
+  cursor: pointer;
+}
+
 ul.navbar_list li {
   font-size: 20px;
   color: white;
@@ -317,7 +322,6 @@ div.testimonies {
   padding: 20px 60px;
   position: relative;
   background-color: #F8F9FA;
-  padding: 20px;
   /* Ensures content doesn’t touch edges */
   color: white;
   /* Change text color for readability */
@@ -397,10 +401,11 @@ footer {
   padding: 20px;
 }
 
-footer img {
+
+footer img, footer .site-logo {
   width: 100px;
   height: 100px;
-  margin: 30px auto;
+  margin: 20px auto;
 }
 
 footer p {
@@ -409,6 +414,7 @@ footer p {
   line-height: 150%;
   color: #FFFFFF99;
   text-align: center;
+  margin-top: 20px;
 }
 
 footer .socials {
@@ -1093,6 +1099,10 @@ ul.navbar_list {
   list-style-type: none;
   margin: 20px 40px;
 }
+ul.navbar_list a{
+  text-decoration: none;
+  cursor: pointer;
+}
 
 ul.navbar_list li {
   font-size: 18px;
@@ -1421,10 +1431,10 @@ footer {
   padding: 20px;
 }
 
-footer img {
+footer img, footer .site-logo {
   width: 80px;
   height: 80px;
-  margin: 30px auto;
+  margin: 20px auto;
 }
 
 footer p {
@@ -1433,6 +1443,7 @@ footer p {
   line-height: 120%;
   color: #FFFFFF99;
   text-align: center;
+  margin-top: 20px;
 }
 
 footer .socials {
@@ -2036,7 +2047,7 @@ div.dandt > div input{
 
 
 /* For Mobile devices */
-@media (max-width: 480px) {
+@media (max-width: 765px) {
     /* CODE FOR THE INDEX PAGE WHICH IS ALSO THE HOMPAGE mobile VIEW */
 header.dc_header {
   background-image: url("../static/assets/bg_dc.jpg");
@@ -2108,6 +2119,11 @@ ul.navbar_list {
   text-decoration: none;
   list-style-type: none;
   margin: 5px 10px;
+}
+
+ul.navbar_list a{
+  text-decoration: none;
+  cursor: pointer;
 }
 
 ul.navbar_list li {
@@ -2443,10 +2459,10 @@ footer {
   padding: 10px;
 }
 
-footer img {
+footer img, footer .site-logo {
   width: 50px;
   height: 50px;
-  margin: 20px auto;
+  margin: 10px auto;
 }
 
 footer p {
@@ -2455,6 +2471,7 @@ footer p {
   line-height: 100%;
   color: #FFFFFF99;
   text-align: center;
+  margin-top: 20px;
 }
 
 footer .socials {
