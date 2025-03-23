@@ -1,4 +1,3 @@
-
 html {
   height: 100%;
 }
@@ -12,6 +11,7 @@ header.dc_header {
   background-size: cover;
   background-color: rgba(0, 0, 0, 0.6);
 }
+
 header.dc_header::before {
   content: "";
   position: absolute;
@@ -19,14 +19,20 @@ header.dc_header::before {
   left: 0;
   width: 100%;
   height: inherit;
-  background-color: rgba(0, 0, 0, 0.6); /* Dark overlay */
+  background-color: rgba(0, 0, 0, 0.6);
+  /* Dark overlay */
   z-index: 1;
 }
+
 header.dc_header * {
   position: relative;
   z-index: 2;
 }
-header.dc_header h2{
+header.dc_header .hr{
+  display: none;
+}
+
+header.dc_header h2 {
   text-align: center;
   font-size: 80px;
   font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
@@ -35,7 +41,8 @@ header.dc_header h2{
   color: #FFFFFF;
   margin-top: 80px;
 }
-header.dc_header p{
+
+header.dc_header p {
   text-align: center;
   font-size: 24px;
   font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
@@ -45,18 +52,19 @@ header.dc_header p{
   margin-top: 80px;
 }
 
-div.navbar{
+div.navbar {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
 }
-div.navbar img{
+
+div.navbar img {
   width: 80px;
   height: 80px;
   margin: 20px 40px;
 }
 
-ul.navbar_list{
+ul.navbar_list {
   display: flex;
   flex-direction: row;
   gap: 30px;
@@ -65,11 +73,12 @@ ul.navbar_list{
   margin: 20px 40px;
 }
 
-ul.navbar_list li{
+ul.navbar_list li {
   font-size: 20px;
   color: white;
 }
-header.dc_header div.header-info{
+
+header.dc_header div.header-info {
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -77,32 +86,38 @@ header.dc_header div.header-info{
   margin-top: 85px;
   margin-bottom: 20px;
 }
+
 header.dc_header div.header-info .info {
   width: 450px;
   display: flex;
   flex-direction: column;
   color: #1B1C1E;
-  background-color: rgba(255, 255, 255, 0.8); /* 80% transparency */
+  background-color: rgba(255, 255, 255, 0.8);
+  /* 80% transparency */
   border-radius: 12px;
   padding: 16px 32px;
   gap: 10px;
 }
-header.dc_header div.header-info .info div{
+
+header.dc_header div.header-info .info div {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
 }
-.info-1{
+
+.info-1 {
   font-size: 14px;
   font-weight: 400;
   font-family: Georgia, 'Times New Roman', Times, serif;
 }
-.info-2{
+
+.info-2 {
   font-size: 20px;
   font-weight: 500;
   font-family: Georgia, 'Times New Roman', Times, serif;
 }
-div.daily-prayer{
+
+div.daily-prayer {
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -110,36 +125,42 @@ div.daily-prayer{
   padding: 20px 60px;
   margin-top: 60px;
 }
-.dp-image img{
+
+.dp-image img {
   width: 700px;
   height: 500px;
 }
-.dp-caption{
+
+.dp-caption {
   font-size: 72px;
   font-weight: 700px;
   color: #4A0404;
   line-height: 120%;
   font-family: Georgia, 'Times New Roman', Times, serif;
 }
-.dp-prayer{
+
+.dp-prayer {
   font-size: 24px;
-  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   font-weight: 200;
   line-height: 150%;
   border-left: 16px solid #242220;
   padding: 15px;
   height: inherit;
 }
-div.vid{
+
+div.vid {
   text-align: center;
   margin-top: 30px;
 }
-div.vid iframe{
+
+div.vid iframe {
   width: 1200px;
-  height: 680px; 
+  height: 680px;
   border-radius: 10px;
 }
-div.schedule{
+
+div.schedule {
   padding: 40px 100px;
   display: flex;
   flex-direction: column;
@@ -147,16 +168,21 @@ div.schedule{
   background-color: #4a0404;
   margin-top: 60px;
 }
-.schedule h3{
+
+.schedule h3 {
   font-family: Georgia, 'Times New Roman', Times, serif;
   font-size: 60px;
   font-weight: 400;
   line-height: 120%;
-  background: radial-gradient(circle, white, #2B71FC); /* Gradient */
-  -webkit-background-clip: text; /* For Webkit browsers */
-  -webkit-text-fill-color: transparent; /* Makes the text transparent */
+  background: radial-gradient(circle, white, #2B71FC);
+  /* Gradient */
+  -webkit-background-clip: text;
+  /* For Webkit browsers */
+  -webkit-text-fill-color: transparent;
+  /* Makes the text transparent */
 }
-.schedule span{
+
+.schedule span {
   font-size: 20px;
   font-weight: 400;
   line-height: 150%;
@@ -172,56 +198,70 @@ div.schedule-info {
   margin-top: 20px;
   margin-bottom: 20px;
 }
-div.schedule-info div.s-info{
+
+div.schedule-info div.s-info {
   width: 450px;
   display: flex;
   flex-direction: column;
   color: #1B1C1E;
-  background-color: rgba(255, 255, 255, 0.969); /* 80% transparency */
+  background-color: rgba(255, 255, 255, 0.969);
+  /* 80% transparency */
   border-radius: 6px;
   padding: 8px 16px;
   gap: 10px;
 }
-div.schedule-info div.s-info  div{
+
+div.schedule-info div.s-info div {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
 }
-div.s-info  .info-1{
+
+div.s-info .info-1 {
   font-size: 20px;
   font-weight: 400;
   font-family: Georgia, 'Times New Roman', Times, serif;
-  background: linear-gradient(to right, #686e79,#250202); /* Gradient */
-  -webkit-background-clip: text; /* For Webkit browsers */
-  -webkit-text-fill-color: transparent; /* Makes the text transparent */
+  background: linear-gradient(to right, #686e79, #250202);
+  /* Gradient */
+  -webkit-background-clip: text;
+  /* For Webkit browsers */
+  -webkit-text-fill-color: transparent;
+  /* Makes the text transparent */
 }
-div.s-info  .info-2{
+
+div.s-info .info-2 {
   font-size: 20px;
   font-weight: 500;
   color: #000000;
   font-family: Georgia, 'Times New Roman', Times, serif;
 }
-div.mp{
+
+div.mp {
   display: flex;
   flex-direction: column;
   justify-content: center;
   margin-top: 20px;
   padding: 20px 60px;
 }
-div.mp h3{
+
+div.mp h3 {
   font-size: 72px;
   font-weight: 700px;
   color: #4A0404;
   line-height: 120%;
   font-family: Georgia, 'Times New Roman', Times, serif;
 }
-.sec-1,.sec-2{
+
+.sec-1,
+.sec-2 {
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
   padding: inherit;
 }
-.sec-1 li, .sec-2 li{
+
+.sec-1 li,
+.sec-2 li {
   font-size: 28px;
   font-weight: 700;
   line-height: 120%;
@@ -229,29 +269,35 @@ div.mp h3{
   list-style-type: disc;
   font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
-.sec-1 p, .sec-2 p{
+
+.sec-1 p,
+.sec-2 p {
   width: 300px;
   font-weight: 400;
   color: #4F4F4F;
   size: 24px;
   line-height: 150%;
 }
-.sec-2 img{
+
+.sec-2 img {
   width: 680px;
   height: 450px;
 }
-div.daily-quote{
+
+div.daily-quote {
   display: flex;
   flex-direction: column;
   gap: 10px;
 }
-div.daily-quote .quote{
+
+div.daily-quote .quote {
   font-weight: 700;
   text-align: center;
   color: #000000;
   font-size: 144px;
 }
-div.daily-quote p{
+
+div.daily-quote p {
   text-align: center;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   font-size: 36px;
@@ -259,31 +305,42 @@ div.daily-quote p{
   line-height: 120%;
   font-style: italic;
 }
-div.daily-quote .speaker{
+
+div.daily-quote .speaker {
   font-weight: 700;
   text-align: center;
   color: #000000;
   font-size: 24px;
 }
+
 div.testimonies {
   padding: 20px 60px;
   position: relative;
   background-color: #F8F9FA;
-  padding: 20px; /* Ensures content doesn’t touch edges */
-  color: white; /* Change text color for readability */
+  padding: 20px;
+  /* Ensures content doesn’t touch edges */
+  color: white;
+  /* Change text color for readability */
 }
+
 .testimonial-image {
-  width: 600px;   /* Set image width */
-  max-height: 100%;  /* Set image height */
-  object-fit: cover; /* Ensures the image covers the entire div without distortion */
-  position: absolute; /* Position the image behind the content */
+  width: 600px;
+  /* Set image width */
+  max-height: 100%;
+  /* Set image height */
+  object-fit: cover;
+  /* Ensures the image covers the entire div without distortion */
+  position: absolute;
+  /* Position the image behind the content */
   top: 0;
   right: 0;
   bottom: 0;
   padding: 10px;
-  z-index: 1; /* Keeps the image behind the text */
+  z-index: 1;
+  /* Keeps the image behind the text */
 }
-h3.testimonies{
+
+h3.testimonies {
   font-size: 72px;
   font-weight: 700px;
   color: #4A0404;
@@ -291,7 +348,8 @@ h3.testimonies{
   font-family: Georgia, 'Times New Roman', Times, serif;
   padding: 20px 60px;
 }
-div.testimony{
+
+div.testimony {
   width: 950px;
   height: 380px;
   display: flex;
@@ -302,23 +360,28 @@ div.testimony{
   padding: 10px;
   border-radius: 20px;
   margin: 0px auto;
-  position: relative; /* Ensures the text appears above the background */
+  position: relative;
+  /* Ensures the text appears above the background */
   z-index: 1;
 }
+
 .testimony {
-   /* Keeps text on top of the background */
-  background: rgba(0, 0, 0, 0.5); /* Optional: Adds a semi-transparent dark overlay */
+  /* Keeps text on top of the background */
+  background: rgba(0, 0, 0, 0.5);
+  /* Optional: Adds a semi-transparent dark overlay */
   padding: 15px;
   border-radius: 10px;
 }
-span.testifier{
+
+span.testifier {
   font-size: 32px;
   font-weight: 400;
   line-height: 120%;
   text-align: center;
   color: #1B1C1E;
 }
-span.message{
+
+span.message {
   font-weight: 400px;
   font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
   font-size: 24px;
@@ -326,31 +389,36 @@ span.message{
   text-align: center;
   color: #4F4F4F;
 }
-footer{
+
+footer {
   display: flex;
   flex-direction: column;
   background-color: #4A0404;
-  padding: 20px ;
+  padding: 20px;
 }
-footer img{
+
+footer img {
   width: 100px;
   height: 100px;
   margin: 30px auto;
 }
-footer p{
+
+footer p {
   font-weight: 400;
   font-size: 20px;
   line-height: 150%;
   color: #FFFFFF99;
   text-align: center;
 }
-footer .socials{
+
+footer .socials {
   display: flex;
   flex-direction: row;
   justify-content: center;
   gap: 20px;
 }
-.socials i{
+
+.socials i {
   width: 50px;
   height: 50px;
   color: #FFFFFF;
@@ -358,3 +426,2619 @@ footer .socials{
 
 
 /* CODE FOR THE ABOUT US PAGE LAPTOP VIEW */
+header.ab_header {
+  background-image: url("../static/assets/about.jpg");
+  background-repeat: no-repeat;
+  height: 500px;
+  background-position: center;
+  background-size: cover;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+header.ab_header::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: inherit;
+  background-color: rgba(0, 0, 0, 0.6);
+  /* Dark overlay */
+  z-index: 1;
+}
+
+header.ab_header * {
+  position: relative;
+  z-index: 2;
+}
+
+header.ab_header .hr{
+  display: none;
+}
+
+
+header.ab_header h2 {
+  text-align: center;
+  font-size: 80px;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  font-weight: 700;
+  line-height: 100%;
+  color: #FFFFFF;
+  margin-top: 80px;
+}
+
+h3.ab-h3 {
+  font-size: 72px;
+  font-weight: 700px;
+  color: #4A0404;
+  line-height: 120%;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  padding: 20px 60px;
+}
+
+p.ab-p {
+  padding: 20px 60px;
+  font-weight: 400;
+  color: #4F4F4F;
+  font-size: 24px;
+  line-height: 150%;
+}
+
+div.ab-images {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  margin: 10px 0;
+}
+
+div.ab-images img {
+  width: 400px;
+  height: 250px;
+}
+
+div.core-m {
+  padding: 20px 60px;
+  display: flex;
+  flex-direction: row;
+  overflow-x: auto;
+  /* Enables horizontal scrolling */
+  white-space: nowrap;
+  /* Prevents wrapping of child elements */
+  width: 100%;
+  /* Optional: to ensure it takes the full width of its container */
+}
+
+.core-m>div {
+  display: inline-block;
+  /* Ensures the child elements are laid out in a row */
+  margin-right: 10px;
+  /* Optional: adds spacing between the elements */
+}
+
+div.core-m div {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+div.core-m div img {
+  width: 400px;
+  height: 320px;
+  border-radius: 2px;
+  border: 10px solid rgb(179, 176, 176);
+}
+
+div.core-m div .name {
+  text-align: center;
+  color: #646464;
+  font-size: 24px;
+  line-height: 120%;
+  font-weight: 600;
+}
+
+div.core-m div .role {
+  text-align: center;
+  color: #4A0404;
+  font-size: 24px;
+  line-height: 120%;
+  font-weight: 600;
+}
+
+div.faqs {
+  background-color: #F9FAFB;
+  padding: 20px 60px;
+}
+
+
+/* CODE FOR SERMONS PAGE LAPTOP VIEW */
+header.sms_header {
+  background-image: url("../static/assets/sermons.jpg");
+  background-repeat: no-repeat;
+  height: 500px;
+  background-position: center;
+  background-size: cover;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+header.sms_header::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: inherit;
+  background-color: rgba(0, 0, 0, 0.6);
+  /* Dark overlay */
+  z-index: 1;
+}
+
+header.sms_header * {
+  position: relative;
+  z-index: 2;
+}
+header.sms_header .hr{
+  display: none;
+}
+header.sms_header h2 {
+  text-align: center;
+  font-size: 80px;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  font-weight: 700;
+  line-height: 100%;
+  color: #FFFFFF;
+  margin-top: 80px;
+}
+
+h3.sms-h3 {
+  font-size: 72px;
+  font-weight: 700px;
+  color: #4A0404;
+  line-height: 120%;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  padding: 20px 60px;
+}
+
+.sms-list {
+  padding: 20px 60px;
+}
+
+.sms-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  /* Create 3 equal-width columns */
+  align-items: center;
+  /* Vertically center the grid items */
+  justify-items: center;
+  /* Horizontally center the grid items */
+  gap: 20px;
+  /* Space between grid items */
+  background-color: #f0f3f6;
+  padding: 60px;
+}
+
+.single-sermon {
+  width: 360px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: white;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.single-sermon .img {
+  position: relative;
+  margin: auto;
+}
+
+.single-sermon i {
+  position: absolute;
+  /* Position the icon absolutely within the .single-sermon container */
+  bottom: 10px;
+  /* Distance from the top of the container */
+  left: 10px;
+  /* Distance from the left of the container */
+  font-size: 30px;
+  /* Adjust the icon size as needed */
+  color: white;
+  /* Change color to make the icon visible on top of the image */
+}
+
+.single-sermon .content {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 320px;
+  margin: 8px auto;
+}
+
+.single-sermon img {
+  width: 320px;
+  /* Make the image fill the container */
+  height: 240px;
+  margin: 8px auto;
+  border-radius: 2.5px;
+
+}
+
+.single-sermon .content .time {
+  color: #9D9D9D;
+  font-size: 16px;
+  color: #708090;
+}
+
+.single-sermon .content .topic {
+  width: inherit;
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 120%;
+  color: #1b1c1ef0;
+}
+
+.single-sermon .content .intro {
+  width: inherit;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 120%;
+  color: #708090;
+}
+
+div.pagination {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 20px 60px;
+  margin-bottom: 60px;
+}
+
+div.pagination button {
+  outline: none;
+  background-color: white;
+  border: 1px solid #D0D5DD;
+  padding: 8px 14px;
+  border-radius: 20px;
+}
+
+div.nums {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 20px;
+}
+
+div.nums span.active {
+  color: #4A0404;
+  width: 30px;
+  text-align: center;
+  border-radius: 4px;
+  background-color: #4a04042e;
+
+}
+
+div.nums span {
+  width: 30px;
+  color: #98A2B3;
+  border-radius: 8px;
+}
+
+
+
+/* CODE FOR SINGLE SERMON PAGE LAPTOP VIEW */
+header.sm_header {
+  background-image: url("../static/assets/sermon.jpg");
+  background-repeat: no-repeat;
+  height: 500px;
+  background-position: center;
+  background-size: cover;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+header.sm_header::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: inherit;
+  background-color: rgba(0, 0, 0, 0.6);
+  /* Dark overlay */
+  z-index: 1;
+}
+
+header.sm_header * {
+  position: relative;
+  z-index: 2;
+}
+
+header.sm_header .hr{
+  display: none;
+}
+
+header.sm_header h2 {
+  text-align: center;
+  font-size: 80px;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  font-weight: 700;
+  line-height: 100%;
+  color: #FFFFFF;
+  margin-top: 80px;
+}
+
+header.sm_header .sm_details {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin-top: 30px;
+  color: white;
+}
+
+h3.sm-h3 {
+  font-size: 72px;
+  font-weight: 700px;
+  color: #4A0404;
+  line-height: 120%;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  padding: 20px 60px;
+}
+
+.scripture,
+.passage {
+  font-size: 18px;
+  font-style: oblique;
+}
+
+section.audio-message {
+  padding: 20px 60px;
+}
+
+div.audio-container {
+  display: flex;
+  flex-direction: row;
+  gap: 30px;
+  background-color: #f0f3f6;
+  padding: 40px;
+}
+
+section.audio-message img {
+  width: 280px;
+  height: 230px;
+}
+
+div.audio {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  justify-content: center;
+}
+
+div.audio span {
+  font-size: 20px;
+}
+
+.mssg {
+  color: #1B1C1E;
+  font-weight: 600;
+}
+
+.preacher,
+.date {
+  color: #6a6a6a;
+}
+
+div.audio audio {
+  width: 800px;
+}
+
+p.sm-p {
+  padding: 20px 60px;
+  font-weight: 400;
+  color: #4F4F4F;
+  font-size: 24px;
+  line-height: 150%;
+}
+
+
+
+
+
+/* CODE FOR PRAYERS PAGE LAPTOP VIEW */
+header.pr_header {
+  background-image: url("../static/assets/p1.jpg");
+  background-repeat: no-repeat;
+  height: 500px;
+  background-position: center;
+  background-size: cover;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+header.pr_header::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: inherit;
+  background-color: rgba(0, 0, 0, 0.6);
+  /* Dark overlay */
+  z-index: 1;
+}
+
+header.pr_header * {
+  position: relative;
+  z-index: 2;
+}
+header.pr_header .hr{
+  display: none;
+}
+
+
+header.pr_header h2 {
+  text-align: center;
+  font-size: 80px;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  font-weight: 700;
+  line-height: 100%;
+  color: #FFFFFF;
+  margin-top: 80px;
+}
+
+header.pr_header .pr_details {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin-top: 30px;
+  color: white;
+}
+
+h3.pr-h3 {
+  font-size: 36px;
+  font-weight: 700px;
+  color: #4A0404;
+  line-height: 120%;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  padding: 20px 60px;
+}
+
+div.meetings {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  justify-content: center;
+  margin: 40px auto;
+  width: 700px;
+  /* border: 1px solid black; */
+  box-shadow: 4px 4px 10px grey;
+  padding: 40px;
+  border-radius: 16px;
+}
+
+.select-meet {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 4px 4px;
+  background-color: rgb(227, 227, 227);
+  border-radius: 4px;
+}
+
+.select-meet span {
+  color: #969090;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 150%;
+  padding: 8px 16px;
+  cursor: pointer;
+}
+
+.select-meet span.active {
+  color: #1B1C1E;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 150%;
+  background-color: white;
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+form.request-prayer div,
+form.Schedule-meet div,
+form.share-t div{
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin: 6px 0;
+}
+
+form.request-prayer div .input-details,
+form.Schedule-meet div .input-details,
+form.share-t div .input-details{
+  border: 1px solid #C7C6C6;
+  padding: 10px;
+  border-radius: 6px;
+}
+
+form.request-prayer div .pr,
+form.Schedule-meet div .pr,
+form.share-t div .pr {
+  height: 300px;
+  border: 1px solid #C7C6C6;
+  border-radius: 6px;
+}
+
+form.Schedule-meet select {
+  background-color: white;
+  color: #393939;
+}
+
+.btn-form {
+  width: 100%;
+  background-color: #4A0404;
+  color: white;
+  padding: 8px;
+  border-radius: 6px;
+  border: none;
+  margin: 10px 0;
+}
+div.dandt{
+  display: flex !important;
+  flex-direction: row !important;
+  justify-content: space-between !important;
+  gap: 10px;
+}
+div.dandt > div input{
+  width: 300px;
+}
+.m1{
+  display: block;
+}
+.m2{
+  display: none;
+}
+.m3{
+  display: none;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* For Tablets devices */
+@media (min-width: 768px) and (max-width: 1024px) {
+  /* CODE FOR THE INDEX PAGE WHICH IS ALSO THE HOMPAGE tablet VIEW */
+header.dc_header {
+  background-image: url("../static/assets/bg_dc.jpg");
+  background-repeat: no-repeat;
+  height: 950px;
+  background-position: center;
+  background-size: cover;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+header.dc_header::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: inherit;
+  background-color: rgba(0, 0, 0, 0.6);
+  /* Dark overlay */
+  z-index: 1;
+}
+
+header.dc_header * {
+  position: relative;
+  z-index: 2;
+}
+
+header.dc_header .hr{
+  display: block;
+}
+
+header.dc_header h2 {
+  text-align: center;
+  font-size: 60px;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  font-weight: 700;
+  line-height: 100%;
+  color: #FFFFFF;
+  margin-top: 80px;
+}
+
+header.dc_header p {
+  padding: 0 40px;
+  text-align: center;
+  font-size: 18px;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  font-weight: 500;
+  line-height: 100%;
+  color: #FFFFFF;
+  margin-top: 80px;
+}
+
+div.navbar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+div.navbar img {
+  width: 60px;
+  height: 60px;
+  margin: 20px 40px;
+}
+
+ul.navbar_list {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  text-decoration: none;
+  list-style-type: none;
+  margin: 20px 40px;
+}
+
+ul.navbar_list li {
+  font-size: 18px;
+  color: white;
+}
+
+header.dc_header div.header-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin-top: 85px;
+  margin-bottom: 20px;
+}
+
+header.dc_header div.header-info .info {
+  width: 600px;
+  display: flex;
+  flex-direction: column;
+  color: #1B1C1E;
+  background-color: rgba(255, 255, 255, 0.8);
+  /* 80% transparency */
+  border-radius: 12px;
+  padding: 10px 20px;
+  gap: 5px;
+}
+
+header.dc_header div.header-info .info div {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.info-1 {
+  font-size: 14px;
+  font-weight: 400;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.info-2 {
+  font-size: 20px;
+  font-weight: 500;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+div.daily-prayer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 10px;
+  padding: 20px 60px;
+  margin-top: 60px;
+}
+
+.dp-image img {
+  width: 700px;
+  height: 500px;
+}
+
+.dp-caption {
+  font-size: 50px;
+  font-weight: 700px;
+  color: #4A0404;
+  line-height: 120%;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.dp-prayer {
+  font-size: 24px;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-weight: 200;
+  line-height: 150%;
+  border-left: 16px solid #242220;
+  padding: 15px;
+  height: inherit;
+}
+
+div.vid {
+  text-align: center;
+  margin-top: 30px;
+}
+
+div.vid iframe {
+  width: 714px;
+  height: 320px;
+  border-radius: 10px;
+}
+
+div.schedule {
+  padding: 40px 100px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  background-color: #4a0404;
+  margin-top: 60px;
+}
+
+.schedule h3 {
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-size: 40px;
+  font-weight: 400;
+  line-height: 120%;
+  background: radial-gradient(circle, white, #2B71FC);
+  /* Gradient */
+  -webkit-background-clip: text;
+  /* For Webkit browsers */
+  -webkit-text-fill-color: transparent;
+  /* Makes the text transparent */
+}
+
+.schedule span {
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 150%;
+  color: white;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+div.schedule-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+div.schedule-info div.s-info {
+  width: 714px;
+  display: flex;
+  flex-direction: column;
+  color: #1B1C1E;
+  background-color: rgba(255, 255, 255, 0.969);
+  /* 80% transparency */
+  border-radius: 6px;
+  padding: 8px 16px;
+  gap: 10px;
+}
+
+div.schedule-info div.s-info div {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+div.s-info .info-1 {
+  font-size: 20px;
+  font-weight: 400;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  background: linear-gradient(to right, #686e79, #250202);
+  /* Gradient */
+  -webkit-background-clip: text;
+  /* For Webkit browsers */
+  -webkit-text-fill-color: transparent;
+  /* Makes the text transparent */
+}
+
+div.s-info .info-2 {
+  font-size: 20px;
+  font-weight: 500;
+  color: #000000;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+div.mp {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-top: 20px;
+  padding: 20px 60px;
+}
+
+div.mp h3 {
+  font-size: 50px;
+  font-weight: 700px;
+  color: #4A0404;
+  line-height: 120%;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.sec-1,
+.sec-2 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  flex-direction: row;
+  justify-content: space-evenly;
+  padding: inherit;
+}
+
+.sec-1 li,
+.sec-2 li {
+  font-size: 28px;
+  font-weight: 700;
+  line-height: 120%;
+  color: #1B1C1E;
+  list-style-type: disc;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+.sec-1 p,
+.sec-2 p {
+  width: 300px;
+  font-weight: 400;
+  color: #4F4F4F;
+  size: 24px;
+  line-height: 150%;
+}
+
+.sec-2 img {
+  width: 300px;
+  height: 250px;
+}
+
+div.daily-quote {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+div.daily-quote .quote {
+  font-weight: 700;
+  text-align: center;
+  color: #000000;
+  font-size: 80px;
+}
+
+div.daily-quote p {
+  text-align: center;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 25px;
+  color: #323335;
+  line-height: 100%;
+  font-style: italic;
+}
+
+div.daily-quote .speaker {
+  font-weight: 700;
+  text-align: center;
+  color: #000000;
+  font-size: 20px;
+}
+
+div.testimonies {
+  padding: 20px 60px;
+  position: relative;
+  background-color: #F8F9FA;
+  padding: 20px;
+  /* Ensures content doesn’t touch edges */
+  color: white;
+  /* Change text color for readability */
+}
+
+.testimonial-image {
+  width: 500px;
+  /* Set image width */
+  max-height: 100%;
+  /* Set image height */
+  object-fit: cover;
+  /* Ensures the image covers the entire div without distortion */
+  position: absolute;
+  /* Position the image behind the content */
+  top: 0;
+  right: 0;
+  bottom: 0;
+  padding: 10px;
+  z-index: 1;
+  /* Keeps the image behind the text */
+}
+
+h3.testimonies {
+  font-size: 50px;
+  font-weight: 700px;
+  color: #4A0404;
+  line-height: 120%;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  padding: 20px 60px;
+}
+
+div.testimony {
+  width: 500px;
+  height: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 10px;
+  background-color: #FFFFFF;
+  padding: 10px 20px;
+  border-radius: 20px;
+  margin: 0px auto;
+  position: relative;
+  /* Ensures the text appears above the background */
+  z-index: 1;
+}
+
+.testimony {
+  /* Keeps text on top of the background */
+  background: rgba(0, 0, 0, 0.5);
+  /* Optional: Adds a semi-transparent dark overlay */
+  padding: 8px;
+  border-radius: 10px;
+}
+
+span.testifier {
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 120%;
+  text-align: center;
+  color: #1B1C1E;
+}
+
+span.message {
+  font-weight: 400px;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  font-size: 18px;
+  line-height: 150%;
+  text-align: center;
+  color: #4F4F4F;
+}
+
+footer {
+  display: flex;
+  flex-direction: column;
+  background-color: #4A0404;
+  padding: 20px;
+}
+
+footer img {
+  width: 80px;
+  height: 80px;
+  margin: 30px auto;
+}
+
+footer p {
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 120%;
+  color: #FFFFFF99;
+  text-align: center;
+}
+
+footer .socials {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 20px;
+}
+
+.socials i {
+  width: 50px;
+  height: 50px;
+  color: #FFFFFF;
+}
+
+
+/* CODE FOR THE ABOUT US PAGE tablet VIEW */
+header.ab_header {
+  background-image: url("../static/assets/about.jpg");
+  background-repeat: no-repeat;
+  height: 450px;
+  background-position: center;
+  background-size: cover;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+header.ab_header::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: inherit;
+  background-color: rgba(0, 0, 0, 0.6);
+  /* Dark overlay */
+  z-index: 1;
+}
+
+header.ab_header * {
+  position: relative;
+  z-index: 2;
+}
+
+header.ab_header .hr{
+  display: block;
+}
+
+header.ab_header h2 {
+  text-align: center;
+  font-size: 50px;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  font-weight: 700;
+  line-height: 100%;
+  color: #FFFFFF;
+  margin-top: 80px;
+}
+
+h3.ab-h3 {
+  font-size: 50px;
+  font-weight: 700px;
+  color: #4A0404;
+  line-height: 120%;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  padding: 20px 60px;
+}
+
+p.ab-p {
+  padding: 20px 60px;
+  font-weight: 400;
+  color: #4F4F4F;
+  font-size: 20px;
+  line-height: 150%;
+}
+
+div.ab-images {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  justify-content: space-evenly;
+  margin: 10px 0;
+}
+
+div.ab-images img {
+  width: 700px;
+  height: 350px;
+}
+
+div.core-m {
+  padding: 10px 30px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  align-items: center;
+  gap: 20px;
+  margin: 10px auto;
+}
+
+
+div.core-m div {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+div.core-m div img {
+  width: 350px;
+  height: 350px;
+  border-radius: 2px;
+  border: 8px solid rgb(179, 176, 176);
+}
+
+div.core-m div .name {
+  text-align: center;
+  color: #646464;
+  font-size: 20px;
+  line-height: 120%;
+  font-weight: 600;
+}
+
+div.core-m div .role {
+  text-align: center;
+  color: #4A0404;
+  font-size: 20px;
+  line-height: 120%;
+  font-weight: 600;
+}
+
+div.faqs {
+  background-color: #F9FAFB;
+  padding: 10px 30px;
+}
+
+
+/* CODE FOR SERMONS PAGE tablet VIEW */
+header.sms_header {
+  background-image: url("../static/assets/sermons.jpg");
+  background-repeat: no-repeat;
+  height: 500px;
+  background-position: center;
+  background-size: cover;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+header.sms_header::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: inherit;
+  background-color: rgba(0, 0, 0, 0.6);
+  /* Dark overlay */
+  z-index: 1;
+}
+
+header.sms_header * {
+  position: relative;
+  z-index: 2;
+}
+header.sms_header .hr{
+  display: block;
+}
+
+header.sms_header h2 {
+  text-align: center;
+  font-size: 60px;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  font-weight: 700;
+  line-height: 100%;
+  color: #FFFFFF;
+  margin-top: 80px;
+}
+
+h3.sms-h3 {
+  font-size: 50px;
+  font-weight: 700px;
+  color: #4A0404;
+  line-height: 120%;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  padding: 10px 30px;
+}
+
+.sms-list {
+  padding: 10px 30px;
+}
+
+.sms-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  /* Create 3 equal-width columns */
+  align-items: center;
+  /* Vertically center the grid items */
+  justify-items: center;
+  /* Horizontally center the grid items */
+  gap: 20px;
+  /* Space between grid items */
+  background-color: #f0f3f6;
+  padding: 60px;
+}
+
+.single-sermon {
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: white;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.single-sermon .img {
+  position: relative;
+  margin: auto;
+}
+
+.single-sermon i {
+  position: absolute;
+  
+  /* Position the icon absolutely within the .single-sermon container */
+  bottom: 10px;
+  /* Distance from the top of the container */
+  left: 10px;
+  /* Distance from the left of the container */
+  font-size: 30px;
+  /* Adjust the icon size as needed */
+  color: white;
+  /* Change color to make the icon visible on top of the image */
+}
+
+.single-sermon .content {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 250px;
+  margin: 8px auto;
+}
+
+.single-sermon img {
+  width: 250px;
+  /* Make the image fill the container */
+  height: 200px;
+  margin: 8px auto;
+  border-radius: 2.5px;
+
+}
+
+.single-sermon .content .time {
+  color: #9D9D9D;
+  font-size: 14px;
+  color: #708090;
+}
+
+.single-sermon .content .topic {
+  width: inherit;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 120%;
+  color: #1b1c1ef0;
+}
+
+.single-sermon .content .intro {
+  width: inherit;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 120%;
+  color: #708090;
+}
+
+div.pagination {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 20px 60px;
+  margin-bottom: 60px;
+}
+
+div.pagination button {
+  outline: none;
+  background-color: white;
+  border: 1px solid #D0D5DD;
+  padding: 8px 14px;
+  border-radius: 20px;
+}
+
+div.nums {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 20px;
+}
+
+div.nums span.active {
+  color: #4A0404;
+  width: 30px;
+  text-align: center;
+  border-radius: 4px;
+  background-color: #4a04042e;
+
+}
+
+div.nums span {
+  width: 30px;
+  color: #98A2B3;
+  border-radius: 8px;
+}
+
+
+
+/* CODE FOR SINGLE SERMON PAGE tablet VIEW */
+header.sm_header {
+  background-image: url("../static/assets/sermon.jpg");
+  background-repeat: no-repeat;
+  height: 500px;
+  background-position: center;
+  background-size: cover;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+header.sm_header::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: inherit;
+  background-color: rgba(0, 0, 0, 0.6);
+  /* Dark overlay */
+  z-index: 1;
+}
+
+header.sm_header * {
+  position: relative;
+  z-index: 2;
+}
+header.sm_header .hr{
+  display: block;
+}
+
+header.sm_header h2 {
+  text-align: center;
+  font-size: 80px;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  font-weight: 700;
+  line-height: 100%;
+  color: #FFFFFF;
+  margin-top: 80px;
+}
+
+header.sm_header .sm_details {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin-top: 30px;
+  color: white;
+}
+
+h3.sm-h3 {
+  font-size: 50px;
+  font-weight: 700px;
+  color: #4A0404;
+  line-height: 120%;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  padding: 20px 60px;
+}
+
+.scripture,
+.passage {
+  font-size: 18px;
+  font-style: oblique;
+}
+
+section.audio-message {
+  padding: 20px 60px;
+}
+
+div.audio-container {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  background-color: #f0f3f6;
+  padding: 20px;
+}
+
+section.audio-message img {
+  width: 200px;
+  height: 160px;
+}
+
+div.audio {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  justify-content: center;
+}
+
+div.audio span {
+  font-size: 14px;
+}
+
+.mssg {
+  color: #1B1C1E;
+  font-weight: 600;
+}
+
+.preacher,
+.date {
+  color: #6a6a6a;
+}
+
+div.audio audio {
+  width: 400px;
+}
+
+p.sm-p {
+  padding: 20px 60px;
+  font-weight: 400;
+  color: #4F4F4F;
+  font-size: 20px;
+  line-height: 150%;
+}
+
+
+
+
+
+/* CODE FOR PRAYERS PAGE tablet VIEW */
+header.pr_header {
+  background-image: url("../static/assets/p1.jpg");
+  background-repeat: no-repeat;
+  height: 500px;
+  background-position: center;
+  background-size: cover;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+header.pr_header::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: inherit;
+  background-color: rgba(0, 0, 0, 0.6);
+  /* Dark overlay */
+  z-index: 1;
+}
+
+header.pr_header * {
+  position: relative;
+  z-index: 2;
+}
+header.pr_header .hr{
+  display: block;
+}
+
+header.pr_header h2 {
+  text-align: center;
+  font-size: 50px;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  font-weight: 700;
+  line-height: 100%;
+  color: #FFFFFF;
+  margin-top: 80px;
+}
+
+header.pr_header .pr_details {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin-top: 30px;
+  color: white;
+}
+
+h3.pr-h3 {
+  font-size: 30px;
+  font-weight: 700px;
+  color: #4A0404;
+  line-height: 120%;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  padding: 20px 60px;
+}
+
+div.meetings {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  justify-content: center;
+  margin: 40px auto;
+  width: 700px;
+  /* border: 1px solid black; */
+  box-shadow: 4px 4px 10px grey;
+  padding: 40px;
+  border-radius: 16px;
+}
+
+.select-meet {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 4px 4px;
+  background-color: rgb(227, 227, 227);
+  border-radius: 4px;
+}
+
+.select-meet span {
+  color: #969090;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 150%;
+  padding: 8px 16px;
+  cursor: pointer;
+}
+
+.select-meet span.active {
+  color: #1B1C1E;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 150%;
+  background-color: white;
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+form.request-prayer div,
+form.Schedule-meet div,
+form.share-t div{
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin: 6px 0;
+}
+
+form.request-prayer div .input-details,
+form.Schedule-meet div .input-details,
+form.share-t div .input-details{
+  border: 1px solid #C7C6C6;
+  padding: 10px;
+  border-radius: 6px;
+}
+
+form.request-prayer div .pr,
+form.Schedule-meet div .pr,
+form.share-t div .pr {
+  height: 300px;
+  border: 1px solid #C7C6C6;
+  border-radius: 6px;
+}
+
+form.Schedule-meet select {
+  background-color: white;
+  color: #393939;
+}
+
+.btn-form {
+  width: 100%;
+  background-color: #4A0404;
+  color: white;
+  padding: 8px;
+  border-radius: 6px;
+  border: none;
+  margin: 10px 0;
+}
+div.dandt{
+  display: flex !important;
+  flex-direction: row !important;
+  justify-content: space-between !important;
+  gap: 10px;
+}
+div.dandt > div input{
+  width: 300px;
+}
+.m1{
+  display: block;
+}
+.m2{
+  display: none;
+}
+.m3{
+  display: none;
+}
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* For Mobile devices */
+@media (max-width: 480px) {
+    /* CODE FOR THE INDEX PAGE WHICH IS ALSO THE HOMPAGE mobile VIEW */
+header.dc_header {
+  background-image: url("../static/assets/bg_dc.jpg");
+  background-repeat: no-repeat;
+  height: 750px;
+  background-position: center;
+  background-size: cover;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+header.dc_header::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: inherit;
+  background-color: rgba(0, 0, 0, 0.6);
+  /* Dark overlay */
+  z-index: 1;
+}
+
+header.dc_header * {
+  position: relative;
+  z-index: 2;
+}
+
+header.dc_header .hr{
+  display: block;
+}
+
+header.dc_header h2 {
+  text-align: center;
+  font-size: 30px;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  font-weight: 700;
+  line-height: 100%;
+  color: #FFFFFF;
+  margin-top: 60px;
+}
+
+header.dc_header p {
+  padding: 0 40px;
+  text-align: center;
+  font-size: 16px;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  font-weight: 500;
+  line-height: 100%;
+  color: #FFFFFF;
+  margin-top: 40px;
+}
+
+div.navbar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+div.navbar img {
+  width: 40px;
+  height: 40px;
+  margin: 10px 20px;
+}
+
+ul.navbar_list {
+  display: flex;
+  flex-direction: row;
+  gap: 5px;
+  text-decoration: none;
+  list-style-type: none;
+  margin: 5px 10px;
+}
+
+ul.navbar_list li {
+  font-size: 12px;
+  color: white;
+}
+
+header.dc_header div.header-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin-top: 85px;
+  margin-bottom: 20px;
+}
+
+header.dc_header div.header-info .info {
+  width: 360px;
+  display: flex;
+  flex-direction: column;
+  color: #1B1C1E;
+  background-color: rgba(255, 255, 255, 0.8);
+  /* 80% transparency */
+  border-radius: 12px;
+  padding: 5px 10px;
+  gap: 5px;
+}
+
+header.dc_header div.header-info .info div {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.info i{
+  font-size: 12px;
+}
+.info-1 {
+  font-size: 14px;
+  font-weight: 400;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.info-2 {
+  font-size: 16px;
+  font-weight: 500;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+div.daily-prayer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 10px;
+  padding: 10px 30px;
+  margin-top: 40px;
+}
+
+.dp-image img {
+  width: 350px;
+  height: 250px;
+}
+
+.dp-caption {
+  font-size: 30px;
+  font-weight: 600px;
+  color: #4A0404;
+  line-height: 120%;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.dp-prayer {
+  font-size: 18px;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-weight: 200;
+  line-height: 120%;
+  border-left: 16px solid #242220;
+  padding: 15px;
+  height: inherit;
+}
+
+div.vid {
+  text-align: center;
+  margin-top: 30px;
+}
+
+div.vid iframe {
+  width: 350px;
+  height: 220px;
+  border-radius: 10px;
+}
+
+div.schedule {
+  padding: 20px 50px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  background-color: #4a0404;
+  margin-top: 60px;
+}
+
+.schedule h3 {
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-size: 25px;
+  font-weight: 400;
+  line-height: 120%;
+  background: radial-gradient(circle, white, #2B71FC);
+  /* Gradient */
+  -webkit-background-clip: text;
+  /* For Webkit browsers */
+  -webkit-text-fill-color: transparent;
+  /* Makes the text transparent */
+}
+
+.schedule span {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 120%;
+  color: white;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+div.schedule-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+div.schedule-info div.s-info {
+  width: 340px;
+  display: flex;
+  flex-direction: column;
+  color: #1B1C1E;
+  background-color: rgba(255, 255, 255, 0.969);
+  /* 80% transparency */
+  border-radius: 6px;
+  padding: 4px 8px;
+  gap: 10px;
+}
+
+div.schedule-info div.s-info div {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+div.s-info .info-1 {
+  font-size: 16px;
+  font-weight: 400;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  background: linear-gradient(to right, #686e79, #250202);
+  /* Gradient */
+  -webkit-background-clip: text;
+  /* For Webkit browsers */
+  -webkit-text-fill-color: transparent;
+  /* Makes the text transparent */
+}
+
+div.s-info .info-2 {
+  font-size: 14px;
+  font-weight: 500;
+  color: #000000;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+div.mp {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-top: 20px;
+  padding: 10px 30px;
+}
+
+div.mp h3 {
+  font-size: 25px;
+  font-weight: 700px;
+  color: #4A0404;
+  line-height: 100%;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.sec-1,
+.sec-2 {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  flex-direction: row;
+  justify-content: space-evenly;
+  padding: inherit;
+}
+
+.sec-1 li,
+.sec-2 li {
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 120%;
+  color: #1B1C1E;
+  list-style-type: disc;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+.sec-1 p,
+.sec-2 p {
+  width: 300px;
+  font-weight: 400;
+  color: #4F4F4F;
+  size: 24px;
+  line-height: 150%;
+}
+
+.sec-2 img {
+  width: 300px;
+  height: 250px;
+}
+
+div.daily-quote {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+div.daily-quote .quote {
+  font-weight: 700;
+  text-align: center;
+  color: #000000;
+  font-size: 60px;
+}
+
+div.daily-quote p {
+  text-align: center;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 18px;
+  color: #323335;
+  padding: 20px;
+  line-height: 100%;
+  font-style: italic;
+}
+
+div.daily-quote .speaker {
+  font-weight: 700;
+  text-align: center;
+  color: #000000;
+  font-size: 16px;
+}
+
+div.testimonies {
+  padding: 5px 10px;
+  position: relative;
+  background-color: #F8F9FA;
+  /* Ensures content doesn’t touch edges */
+  color: white;
+  /* Change text color for readability */
+}
+
+.testimonial-image {
+  width: 230px;
+  /* Set image width */
+  max-height: 100%;
+  /* Set image height */
+  object-fit: cover;
+  /* Ensures the image covers the entire div without distortion */
+  position: absolute;
+  /* Position the image behind the content */
+  top: 0;
+  right: 0;
+  bottom: 0;
+  padding: 10px;
+  z-index: 1;
+  /* Keeps the image behind the text */
+}
+div.tsx{
+  padding: 40px !important;
+}
+
+h3.testimonies {
+  font-size: 25px;
+  font-weight: 700px;
+  color: #4A0404;
+  line-height: 120%;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  padding: 10px 30px;
+}
+
+div.testimony {
+  width:inherit;
+  max-width: max-content;
+  height: 150px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 10px;
+  background-color: #FFFFFF;
+  padding: 2px 4px;
+  border-radius: 5px;
+  margin: auto;
+  position: relative;
+  /* Ensures the text appears above the background */
+  z-index: 1;
+}
+
+.testimony {
+  /* Keeps text on top of the background */
+  background: rgba(0, 0, 0, 0.5);
+  /* Optional: Adds a semi-transparent dark overlay */
+  padding: 8px;
+  border-radius: 10px;
+}
+
+span.testifier {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 100%;
+  text-align: center;
+  color: #1B1C1E;
+}
+
+span.message {
+  font-weight: 350;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  font-size: 14px;
+  line-height: 100%;
+  text-align: center;
+  color: #4F4F4F;
+}
+
+footer {
+  display: flex;
+  flex-direction: column;
+  background-color: #4A0404;
+  padding: 10px;
+}
+
+footer img {
+  width: 50px;
+  height: 50px;
+  margin: 20px auto;
+}
+
+footer p {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 100%;
+  color: #FFFFFF99;
+  text-align: center;
+}
+
+footer .socials {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 20px;
+}
+
+.socials i {
+  width: 20px;
+  height: 20px;
+  color: #FFFFFF;
+}
+
+
+/* CODE FOR THE ABOUT US PAGE mobile VIEW */
+header.ab_header {
+  background-image: url("../static/assets/about.jpg");
+  background-repeat: no-repeat;
+  height: 350px;
+  background-position: center;
+  background-size: cover;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+header.ab_header::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: inherit;
+  background-color: rgba(0, 0, 0, 0.6);
+  /* Dark overlay */
+  z-index: 1;
+}
+
+header.ab_header * {
+  position: relative;
+  z-index: 2;
+}
+
+header.ab_header .hr{
+  display: block;
+}
+
+header.ab_header h2 {
+  text-align: center;
+  font-size: 30px;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  font-weight: 700;
+  line-height: 100%;
+  color: #FFFFFF;
+  margin-top: 80px;
+}
+
+h3.ab-h3 {
+  font-size: 25px;
+  font-weight: 700px;
+  color: #4A0404;
+  line-height: 120%;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  padding: 10px 30px;
+}
+
+p.ab-p {
+  padding: 10px 30px;
+  font-weight: 400;
+  color: #4F4F4F;
+  font-size: 16px;
+  line-height: 150%;
+}
+
+div.ab-images {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  justify-content: space-evenly;
+  margin: 10px 0;
+}
+
+div.ab-images img {
+  width: 350px;
+  height: 200px;
+}
+
+div.core-m {
+  padding: 10px 30px;
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  align-items: center;
+  gap: 20px;
+  margin: 10px auto;
+}
+
+
+div.core-m div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+}
+
+div.core-m div img {
+  width: 320px;
+  height: 250px;
+  border-radius: 2px;
+  border: 6px solid rgb(179, 176, 176);
+}
+
+div.core-m div .name {
+  text-align: center;
+  color: #646464;
+  font-size: 20px;
+  line-height: 120%;
+  font-weight: 600;
+}
+
+div.core-m div .role {
+  text-align: center;
+  color: #4A0404;
+  font-size: 20px;
+  line-height: 120%;
+  font-weight: 600;
+}
+
+div.faqs {
+  background-color: #F9FAFB;
+  padding: 10px 30px;
+}
+
+
+/* CODE FOR SERMONS PAGE mobile VIEW */
+header.sms_header {
+  background-image: url("../static/assets/sermons.jpg");
+  background-repeat: no-repeat;
+  height: 350px;
+  background-position: center;
+  background-size: cover;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+header.sms_header::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: inherit;
+  background-color: rgba(0, 0, 0, 0.6);
+  /* Dark overlay */
+  z-index: 1;
+}
+
+header.sms_header * {
+  position: relative;
+  z-index: 2;
+}
+header.sms_header .hr{
+  display: block;
+}
+
+header.sms_header h2 {
+  text-align: center;
+  font-size: 30px;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  font-weight: 700;
+  line-height: 100%;
+  color: #FFFFFF;
+  margin-top: 80px;
+}
+
+h3.sms-h3 {
+  font-size: 25px;
+  font-weight: 700px;
+  margin-top: 10px;
+  color: #4A0404;
+  line-height: 120%;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  padding: 5px 15px;
+}
+
+.sms-list {
+  padding: 5px 15px;
+}
+
+.sms-container {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  align-items: center;
+  gap: 20px;
+  background-color: #f0f3f6;
+  padding: 40px;
+}
+
+.single-sermon {
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: white;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.single-sermon .img {
+  position: relative;
+  margin: auto;
+}
+
+.single-sermon i {
+  position: absolute;
+  
+  /* Position the icon absolutely within the .single-sermon container */
+  bottom: 10px;
+  /* Distance from the top of the container */
+  left: 10px;
+  /* Distance from the left of the container */
+  font-size: 30px;
+  /* Adjust the icon size as needed */
+  color: white;
+  /* Change color to make the icon visible on top of the image */
+}
+
+.single-sermon .content {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 250px;
+  margin: 8px auto;
+}
+
+.single-sermon img {
+  width: 250px;
+  /* Make the image fill the container */
+  height: 200px;
+  margin: 8px auto;
+  border-radius: 2.5px;
+
+}
+
+.single-sermon .content .time {
+  color: #9D9D9D;
+  font-size: 14px;
+  color: #708090;
+}
+
+.single-sermon .content .topic {
+  width: inherit;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 120%;
+  color: #1b1c1ef0;
+}
+
+.single-sermon .content .intro {
+  width: inherit;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 120%;
+  color: #708090;
+}
+
+div.pagination {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 10px 30px;
+  margin-bottom: 60px;
+}
+
+div.pagination button {
+  outline: none;
+  background-color: white;
+  border: 1px solid #D0D5DD;
+  padding: 4px 7px;
+  border-radius: 10px;
+}
+
+div.nums {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 10px;
+}
+
+div.nums span.active {
+  color: #4A0404;
+  width: 20px;
+  text-align: center;
+  border-radius: 4px;
+  background-color: #4a04042e;
+
+}
+
+div.nums span {
+  width: 20px;
+  color: #98A2B3;
+  border-radius: 8px;
+}
+
+
+
+/* CODE FOR SINGLE SERMON PAGE mobile VIEW */
+header.sm_header {
+  background-image: url("../static/assets/sermon.jpg");
+  background-repeat: no-repeat;
+  height: 400px;
+  background-position: center;
+  background-size: cover;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+header.sm_header::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: inherit;
+  background-color: rgba(0, 0, 0, 0.6);
+  /* Dark overlay */
+  z-index: 1;
+}
+
+header.sm_header * {
+  position: relative;
+  z-index: 2;
+}
+header.sm_header .hr{
+  display: block;
+}
+
+header.sm_header h2 {
+  text-align: center;
+  font-size: 40px;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  font-weight: 700;
+  line-height: 100%;
+  color: #FFFFFF;
+  margin-top: 80px;
+}
+
+header.sm_header .sm_details {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin-top: 30px;
+  color: white;
+}
+
+h3.sm-h3 {
+  font-size: 50px;
+  font-weight: 700px;
+  color: #4A0404;
+  line-height: 120%;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  padding: 20px 60px;
+}
+
+.scripture,
+.passage {
+  font-size: 18px;
+  font-style: oblique;
+}
+
+section.audio-message {
+  padding: 6px 12px;
+}
+
+div.audio-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  background-color: #f0f3f6;
+  padding: 15px;
+}
+
+section.audio-message img {
+  width: 320px;
+  height: 160px;
+}
+
+div.audio {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  justify-content: center;
+}
+
+div.audio span {
+  font-size: 14px;
+}
+
+.mssg {
+  color: #1B1C1E;
+  font-weight: 600;
+}
+
+.preacher,
+.date {
+  color: #6a6a6a;
+}
+
+div.audio audio {
+  width: 300px;
+}
+
+p.sm-p {
+  padding: 10px 30px;
+  font-weight: 400;
+  color: #4F4F4F;
+  font-size: 16px;
+  line-height: 150%;
+}
+
+
+
+
+
+/* CODE FOR PRAYERS PAGE mobile VIEW */
+header.pr_header {
+  background-image: url("../static/assets/p1.jpg");
+  background-repeat: no-repeat;
+  height: 320px;
+  background-position: center;
+  background-size: cover;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+header.pr_header::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: inherit;
+  background-color: rgba(0, 0, 0, 0.6);
+  /* Dark overlay */
+  z-index: 1;
+}
+
+header.pr_header * {
+  position: relative;
+  z-index: 2;
+}
+header.pr_header .hr{
+  display: block;
+}
+
+header.pr_header h2 {
+  text-align: center;
+  font-size: 30px;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  font-weight: 700;
+  line-height: 100%;
+  color: #FFFFFF;
+  margin-top: 80px;
+}
+
+header.pr_header .pr_details {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin-top: 30px;
+  color: white;
+}
+
+h3.pr-h3 {
+  font-size: 20px;
+  font-weight: 400px;
+  color: #4A0404;
+  line-height: 100%;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  padding: 10px 30px;
+}
+
+div.meetings {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  justify-content: center;
+  margin: 40px auto;
+  width: 350px;
+  padding: 10px;
+  box-shadow: none;
+  border-radius: none;
+  margin: 20px auto;
+}
+
+.select-meet {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 4px 4px;
+  background-color: rgb(227, 227, 227);
+  border-radius: 4px;
+}
+
+.select-meet span {
+  color: #969090;
+  font-weight: 200;
+  font-size: 11px;
+  line-height: 100%;
+  padding: 8px 4px;
+  cursor: pointer;
+}
+
+.select-meet span.active {
+  color: #1B1C1E;
+  font-weight: 400;
+  font-size: 11px;
+  line-height: 100%;
+  background-color: white;
+  padding: 8px 4px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+form.request-prayer div,
+form.Schedule-meet div,
+form.share-t div{
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin: 8px 0;
+}
+
+label{
+  font-size: 16px;
+}
+form.request-prayer div .input-details,
+form.Schedule-meet div .input-details,
+form.share-t div .input-details{
+  border: 1px solid #C7C6C6;
+  padding: 6px;
+  border-radius: 6px;
+}
+
+form.request-prayer div .pr,
+form.Schedule-meet div .pr,
+form.share-t div .pr {
+  height: 150px;
+  border: 1px solid #C7C6C6;
+  border-radius: 6px;
+}
+
+form.Schedule-meet select {
+  background-color: white;
+  color: #393939;
+}
+
+.btn-form {
+  width: 100%;
+  background-color: #4A0404;
+  color: white;
+  padding: 8px;
+  border-radius: 6px;
+  border: none;
+  margin: 10px 0;
+}
+div.dandt{
+  display: flex !important;
+  flex-direction: row !important;
+  justify-content: space-between !important;
+  gap: 10px;
+}
+div.dandt > div input{
+  width: 160px;
+}
+.m1{
+  display: block;
+}
+.m2{
+  display: none;
+}
+.m3{
+  display: none;
+}
+}

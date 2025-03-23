@@ -29,7 +29,7 @@ def create_app():
     mongo = MongoClient(app.config["MONGO_URI"])
     # mongo = MongoClient(app.config["MONGO_DB"], app.config["MONGO_PORT"])
   else:
-    mongo = MongoClient(app.config["MONGO_URI"])
+    mongo = "Hello App!"
     
       # Import Routes
   with app.app_context():
@@ -62,6 +62,14 @@ def create_app():
     @app.route("/sermons")
     def sermons():
       return render_template('sermons.html')
+    
+    @app.route("/sermon/<string:sid>")
+    def sermon(sid):  # Include 'sid' as a parameter
+      return render_template('sermon.html')  # Pass 'sid' to the template
+    
+    @app.route("/prayers")
+    def prayers():
+      return render_template('prayers.html')
     
       
     

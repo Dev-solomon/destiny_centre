@@ -4,51 +4,285 @@
 
 <body>
 
-  <header class="dc_header">
-    <div class="navbar">
-      <img src="../static/assets/dclogo.png">
+    <header class="ab_header">
+        <div class="navbar">
+           <a href="/"><img src="../static/assets/dclogo.png"></a> 
 
-      <ul class="navbar_list">
-        <li>Home</li>
-        <li>About</li>
-        <li>Sermons</li>
-        <li>Request Prayer</li>
-      </ul>
+            <ul class="navbar_list">
+                <li>Home</li>
+                <li>About</li>
+                <li>FaQs</li>
+                <li>Sermons</li>
+                <li>Request Prayer</li>
+            </ul>
+        </div>
+
+        <hr class="hr" style="color: white;">
+        <h2 class="navbar_caption">A CHURCH FOR EVERYONE – <br> GROWING IN FAITH TOGETHER.</h2>
+
+    </header>
+
+
+    <h3 class="ab-h3">OUR HISTORY</h3>
+    <p class="ab-p">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
+        industry's
+        standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make
+        a type specimen book.Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has
+        been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and
+        scrambled it to make a type specimen book.</p>
+
+    <div class="ab-images">
+        <img src="../static/assets/abimg1.jpg" alt="history images">
+        <img src="../static/assets/abimg2.jpg" alt="history images">
+        <img src="../static/assets/abimg3.jpg" alt="history images">
     </div>
 
-    <h2 class="navbar_caption">A PLACE TO WORSHIP, <br> GROW & BEYOND.</h2>
-    <p>Join us as we seek God, build community, and make a difference. Whether you're new to faith or looking for a home
-      church, you'll find a welcoming family here. Come experience inspiring worship, powerful messages, and a loving
-      community.</p>
+    <p class="ab-p">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
+        industry's
+        standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make
+        a type specimen book.Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has
+        been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and
+        scrambled it to make a type specimen book.</p>
 
-    <div class="header-info">
-      <div class="info">
-        <span class="info-1">Sunday Services</span>
-        <i>No.19 Destiny crescent, behind old daughters of charity hospital, Kubwa-Abuja.</i>
-        <br>
-        <span class="info-2">Declaration Service</span>
+
+    <h3 class="ab-h3">MISSION & VISION</h3>
+    <p class="ab-p">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
+        industry's
+        standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make
+        a type specimen book.Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has
+        been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and
+        scrambled it to make a type specimen book.</p>
+
+    <h3 class="ab-h3">OUR BELIEFS</h3>
+    <p class="ab-p">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
+        industry's
+        standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make
+        a type specimen book.Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has
+        been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and
+        scrambled it to make a type specimen book.</p>
+
+    <h3 class="ab-h3">CORE MINISTERS</h3>
+    <div class="core-m">
         <div>
-          <span class="info-1"> <i class="fa fa-calendar" style="color: #2B71FC;"></i> Every Sundays </span>
-          <span class="info-1"><i class="fa fa-clock" style="color: #2B71FC;"></i> 9.00am</span>
+            <img src="../static/assets/img1.jpg" alt="lead pastor">
+            <span class="name">Prophet Peter Odogwu</span>
+            <span class="role">Lead Pastor</span>
         </div>
-      </div>
-      <div class="info">
-        <span class="info-1">Upcoming Event</span>
-        <i>Happening Online.</i>
-        <br>
-        <span class="info-2">Prayer and Intercession for Nations</span>
         <div>
-          <span class="info-1"> <i class="fa fa-calendar" style="color: #2B71FC;"></i> Every weekends </span>
-          <span class="info-1"><i class="fa fa-clock" style="color: #2B71FC;"></i> 10.00pm</span>
+            <img src="../static/assets/img3.jpg" alt="lead pastor">
+            <span class="name">Pastor Mike</span>
+            <span class="role">Assistant Pastor</span>
         </div>
-      </div>
+        <div>
+            <img src="../static/assets/img2.jpg" alt="lead pastor">
+            <span class="name">Mrs Martina</span>
+            <span class="role">Lead Co-ordinator</span>
+        </div>
+
+
     </div>
 
-  </header>
+    <style>
+        .accordion-button:focus {
+            box-shadow: 0 0 0 .1rem rgb(74, 4, 4);
+        }
+        /* Style for the accordion button */
+        .accordion-button {
+            color: #1B1C1E;
+            font-weight: 400;
+            font-family: 'Times New Roman', Times, serif;
+            font-size: 28px;
+            line-height: 120%;
+            background-color: transparent !important;
+            /* Ensure background is transparent !important */
+            border-color: transparent !important;
+            /* Ensure border is transparent !important */
+            transition: all 0.5s;
+            position: relative;
+            /* Needed for pseudo-elements positioning */
+        }
+        /* After pseudo-element (icon or other content after the button text) */
+        .accordion-button::after {
+            content: "";
+            background-color: transparent !important;
+            /* Remove background color */
+            border-color: transparent !important;
+            /* Remove outline color */
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='currentColor' class='bi bi-plus' viewBox='0 0 16 16'%3E%3Cpath d='M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z'/%3E%3C/svg%3E");
+            transition: all 0.5s;
+        }
+        /* When accordion item is expanded (not collapsed) */
+        .accordion-button:not(.collapsed) {
+            color: #1B1C1E;
+            background-color: transparent !important;
+            /* Ensure no background color */
+            border-color: transparent !important;
+            /* Ensure no border color */
+        }
+        /* After pseudo-element when the accordion is expanded */
+        .accordion-button:not(.collapsed)::after {
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='currentColor' class='bi bi-dash' viewBox='0 0 16 16'%3E%3Cpath d='M4 8a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7A.5.5 0 0 1 4 8z'/%3E%3C/svg%3E");
+        }
+        @media (min-width: 768px) and (max-width: 1024px) {
+            .accordion-button:focus {
+            box-shadow: 0 0 0 .1rem rgb(74, 4, 4);
+        }
+        /* Style for the accordion button */
+        .accordion-button {
+            color: #1B1C1E;
+            font-weight: 400;
+            font-family: 'Times New Roman', Times, serif;
+            font-size: 20px;
+            line-height: 120%;
+            background-color: transparent !important;
+            /* Ensure background is transparent !important */
+            border-color: transparent !important;
+            /* Ensure border is transparent !important */
+            transition: all 0.5s;
+            position: relative;
+            /* Needed for pseudo-elements positioning */
+        }
+        /* After pseudo-element (icon or other content after the button text) */
+        .accordion-button::after {
+            content: "";
+            background-color: transparent !important;
+            /* Remove background color */
+            border-color: transparent !important;
+            /* Remove outline color */
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='currentColor' class='bi bi-plus' viewBox='0 0 16 16'%3E%3Cpath d='M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z'/%3E%3C/svg%3E");
+            transition: all 0.5s;
+        }
+        /* When accordion item is expanded (not collapsed) */
+        .accordion-button:not(.collapsed) {
+            color: #1B1C1E;
+            background-color: transparent !important;
+            /* Ensure no background color */
+            border-color: transparent !important;
+            /* Ensure no border color */
+        }
+        /* After pseudo-element when the accordion is expanded */
+        .accordion-button:not(.collapsed)::after {
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='currentColor' class='bi bi-dash' viewBox='0 0 16 16'%3E%3Cpath d='M4 8a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7A.5.5 0 0 1 4 8z'/%3E%3C/svg%3E");
+        }
+        }
+        @media (max-width: 480px) {
+            .accordion-button:focus {
+                
+            box-shadow: 0 0 0 .1rem rgb(74, 4, 4);
+        }
+        .accordion-body{
+            font-size: 14px;
+        }
+        /* Style for the accordion button */
+        .accordion-button {
+            color: #1B1C1E;
+            font-weight: 400;
+            font-family: 'Times New Roman', Times, serif;
+            font-size: 18px;
+            line-height: 120%;
+            background-color: transparent !important;
+            /* Ensure background is transparent !important */
+            border-color: transparent !important;
+            /* Ensure border is transparent !important */
+            transition: all 0.5s;
+            position: relative;
+            /* Needed for pseudo-elements positioning */
+        }
+        /* After pseudo-element (icon or other content after the button text) */
+        .accordion-button::after {
+            content: "";
+            background-color: transparent !important;
+            /* Remove background color */
+            border-color: transparent !important;
+            /* Remove outline color */
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='currentColor' class='bi bi-plus' viewBox='0 0 16 16'%3E%3Cpath d='M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z'/%3E%3C/svg%3E");
+            transition: all 0.5s;
+        }
+        /* When accordion item is expanded (not collapsed) */
+        .accordion-button:not(.collapsed) {
+            color: #1B1C1E;
+            background-color: transparent !important;
+            /* Ensure no background color */
+            border-color: transparent !important;
+            /* Ensure no border color */
+        }
+        /* After pseudo-element when the accordion is expanded */
+        .accordion-button:not(.collapsed)::after {
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='currentColor' class='bi bi-dash' viewBox='0 0 16 16'%3E%3Cpath d='M4 8a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7A.5.5 0 0 1 4 8z'/%3E%3C/svg%3E");
+        }
+        }
+    </style>
+    <div class="faqs">
+        <h3 class="ab-h3">FAQs</h3>
+        <div class="container">
+            <div class="accordion" id="accordionExample">
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                            Where is the church located?
+                        </button>
+                    </h2>
+                    <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
+                        <div class="accordion-body">
+                            We are located at No.19 Destiny crescent, behind old daughters of charity hospital,
+                            Kubwa-Abuja. <br>
+                            Safe Journey and see you in church!
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                            Is there parking available?
+                        </button>
+                    </h2>
+                    <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                        <div class="accordion-body">
+                         Yes! We have a good parking space along the road.
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                            Is there a children’s ministry or Sunday school?
+                        </button>
+                    </h2>
+                    <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                        <div class="accordion-body">
+                           Children attend sunday school ministered by an able teacher. Nourishing them with <br>
+                           the word of God and training them in a way that glorifies God.
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                            What can I expect in a church service?
+                        </button>
+                    </h2>
+                    <div id="collapseFour" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                        <div class="accordion-body">
+                          Come expectant, The word will be taught, healings take place, deliverance, <br>
+                          counselling and spiritual growth.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    {% include 'footer.html' %}
 
 
 
-  <script src="../static/index.js"></script>
+    <script src="../static/index.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 
 </html>
