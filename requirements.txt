@@ -12,5 +12,4 @@ Authlib
 pymongo
 jwt
 flask_caching
-dateutil
 pytz
