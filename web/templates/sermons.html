@@ -16,65 +16,69 @@
 
     <div class="sms-list">
         <div class="sms-container">
-            <div class="single-sermon">
-                <div class="img">
-                    <i class="bi bi-play-circle-fill"></i>
-                    <img src="../static/assets/sms1.jpg" alt="sermon-image">
-                </div>
-
-                <div class="content">
-                    <span class="time">&raquo; 30 Mins</span>
-                    <span class="topic">Living in the fullness of joy</span>
-                    <span class="intro">Lorem Ipsum is simply dummy text of the printing and typesetting
-                        industry.</span>
-                </div>
-            </div>
-            <div class="single-sermon">
-                <div class="img">
-                    <i class="bi bi-play-circle-fill"></i>
-                    <img src="../static/assets/sms1.jpg" alt="sermon-image">
-                </div>
-
-                <div class="content">
-                    <span class="time">&raquo; 30 Mins</span>
-                    <span class="topic">Living in the fullness of joy</span>
-                    <span class="intro">Lorem Ipsum is simply dummy text of the printing and typesetting
-                        industry.</span>
-                </div>
-            </div>
-            <div class="single-sermon">
-                <div class="img">
-                    <i class="bi bi-play-circle-fill"></i>
-                    <img src="../static/assets/sms1.jpg" alt="sermon-image">
-                </div>
-
-                <div class="content">
-                    <span class="time">&raquo; 30 Mins</span>
-                    <span class="topic">Living in the fullness of joy</span>
-                    <span class="intro">Lorem Ipsum is simply dummy text of the printing and typesetting
-                        industry.</span>
-                </div>
-            </div>
+            {% if sermons is defined %}
+            {% for sermon in sermons[0] %}
+                <a href="/sermon/{{ sermon['_id'] }}" aria-label="single-sermon" style="text-decoration: none;" >
+                    <div class="single-sermon">
+                        <div class="img">
+                            <i class="bi bi-play-circle-fill"></i>
+                            <img src="{{ sermon['image'] }}" alt="sermon-image">
+                        </div>
+    
+                        <div class="content">
+                            <span class="time">&raquo; 30 Mins</span>
+                            <span class="topic">{{ sermon['title'] | upper }}</span>
+                            <span class="intro">{{sermon["message"] | safe | lower | truncate(80, True, '...')}}</span>
+                        </div>
+                    </div>
+                </a>
+            {% endfor %}
+            {% endif %}
         </div>
     </div>
 
     <div class="pagination">
-        <button>
+        {% if sermons != [] and sermons != none %}
+        {% set page_num = request.args.get('page_num', 1) | int %}
+
+        {% if page_num >= 1 %}
+        <button onclick="updatePageNumber({{ page_num - 1 }});">
             <i class="fa fa-arrow-left" aria-hidden="true"></i> Previous
         </button>
+        {% endif %}
 
         <div class="nums">
-            <span class="active my-auto">1</span>
-            <span class="my-auto">2</span>
-            <span class="my-auto">3</span>
-            <span class="my-auto">...</span>
-            <span class="my-auto">5</span>
+            {% if page_num == 1 %}
+                <a class="active my-auto">{{page_num}}</a>
+            {% elif page_num > 1 and page_num <= 5 %}
+                {% for num in range(1, page_num + 1) %}
+                    {% if num == page_num %}
+                <a class="my-auto active">{{num}}</a>
+            {% else %}
+                <a href="/sermons?page_num={{num}}" class="my-auto">{{num}}</a>
+            {% endif %}
+            {% endfor %}
+            {% elif page_num >  5 %}
+            <a href="/sermons?page_num={{page_num - 2}}" class="my-auto">{{page_num - 2}}</a>
+            <a href="/sermons?page_num={{page_num - 1}}" class="my-auto">{{page_num - 1}}</a>
+            <a class="my-auto">...</a>
+            <a class="my-auto active">{{page_num}}</a>
+            {% endif %}
         </div>
 
-        <button>
+        {% if page_num != sermons[1] %}
+        <button onclick="updatePageNumber_nextButton()">
           Next  <i class="fa fa-arrow-right" aria-hidden="true"></i>
         </button>
+        {% endif %}
+        {% endif %}
+       
     </div>
+
+
+
+   
+
 
 
     {% include 'footer.html' %}

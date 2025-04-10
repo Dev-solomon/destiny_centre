@@ -35,6 +35,7 @@ def create_app():
   with app.app_context():
     # EXPORTS FUNCTIONS START
     from main.auth import token_required
+    from main.user.controllers.get_controllers import get_daily_prayer, get_upcoming_events, home_video, get_sermons, get_a_sermon
     
     # EXPORTS FUNCTIONS END
     
@@ -53,8 +54,11 @@ def create_app():
   # Index Route
     @app.route("/")
     def home():
+      dp = get_daily_prayer()
+      ue = get_upcoming_events()
+      vid = home_video()
       # Render the page home
-      return render_template('index.html')
+      return render_template('index.html', dp=dp, ue=ue, vid=vid)
     
     # Index Route
     @app.route("/login")
@@ -63,6 +67,7 @@ def create_app():
       return render_template('login.html')
     
     @app.route("/signup")
+    @token_required
     def signup():
       # Render the page home
       return render_template('signup.html')
@@ -75,41 +80,50 @@ def create_app():
     # Sermons Page
     @app.route("/sermons")
     def sermons():
-      return render_template('sermons.html')
+      page_num = request.args.get('page_num', default=1)
+      sermons = get_sermons(page_num)    
+      return render_template('sermons.html', sermons=sermons)
     
     # Add Sermons Page
     @app.route("/addsermon")
-    # @token_required
+    @token_required
     def addsermon():
       return render_template('admin/add-sermon.html')
     
     # add events page
     @app.route("/addevent")
-    # @token_required
+    @token_required
     def addevent():
       return render_template('admin/add-event.html')
     
     # add prayer page
     @app.route("/addprayer")
-    # @token_required
+    @token_required
     def addprayer():
       return render_template('admin/add-prayer.html')
     
+     # admn portal
+    @app.route("/adminportal")
+    @token_required
+    def admin():
+      return render_template('admin/admin.html')
+    
     # add last service to homepage
     @app.route("/addservice")
-    # @token_required
+    @token_required
     def past_service():
       return render_template('admin/add-service.html')
     
     @app.route("/sermon/<string:sid>")
     def sermon(sid):  # Include 'sid' as a parameter
-      return render_template('sermon.html')  # Pass 'sid' to the template
+      single_sermon = get_a_sermon(sid)
+      print(single_sermon)
+      return render_template('sermon.html', sermon=single_sermon)  # Pass 'sid' to the template
     
     @app.route("/prayers")
     def prayers():
       return render_template('prayers.html')
     
-      
     
     @app.route('/clear_cache')
     def clear_cache():

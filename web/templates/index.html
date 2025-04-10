@@ -24,14 +24,18 @@
         </div>
       </div>
       <div class="info">
-        <span class="info-1">Upcoming Event</span>
-        <i>Happening Online.</i>
-        <br>
-        <span class="info-2">Prayer and Intercession for Nations</span>
-        <div>
-          <span class="info-1"> <i class="fa fa-calendar" style="color: #2B71FC;"></i> Every weekends </span>
-          <span class="info-1"><i class="fa fa-clock" style="color: #2B71FC;"></i> 10.00pm</span>
-        </div>
+        {% if ue is defined %}
+        
+          <span class="info-1">Upcoming Event</span>
+          <i>{{ ue['location'] }}</i>
+          <br>
+          <span class="info-2">{{ ue['title'] }}</span>
+          <div>
+            <span class="info-1"> <i class="fa fa-calendar" style="color: #2B71FC;"></i> {{ ue['date'] }}</span>
+            <span class="info-1"><i class="fa fa-clock" style="color: #2B71FC;"></i> {{ ue['time'] }} </span>
+          </div>
+        {% endif %}
+       
       </div>
     </div>
 
@@ -39,27 +43,28 @@
 
 
   <div class="daily-prayer">
+    {% if dp is defined %}
     <div>
       <p class="dp-caption">PRAYER OF THE DAY</p>
-      <p class="dp-prayer">Thank You for the gift of this new day. I surrender my worries, my plans, and my heart into
-        Your loving hands.
-        Guide my steps, fill me with Your peace, and help me to walk in faith and love. Strengthen me to face challenges
-        with courage and remind me that I am never alone, for You are always with me.
-        <span style="float: right;">Romans 8:38-39</span>
-      </p>
+      
+          <p class="dp-prayer">
+            {{ dp['prayer'] }}
+            <span style="float: right;">{{ dp['verse'] }}</span>
+          </p>
+      
     </div>
     <div class="dp-image">
-      <img src="../static/assets/prayer.jpg" alt="daily prayer image" srcset="">
+      <img src="{{ dp['image'] }}" alt="daily prayer image" srcset="">
     </div>
+    {% endif %}
 
   </div>
 
 
   <div class="vid">
-    <iframe
-      src="https://www.facebook.com/plugins/video.php?height=314&href=https%3A%2F%2Fwww.facebook.com%2Ftheunveilingchapel%2Fvideos%2F547086081336963%2F&show_text=false&width=560&t=0"
-      width="560" height="314" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true"
-      allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" allowFullScreen="true"></iframe>
+  {% if vid is defined %}
+    {{ vid['service'] | safe }}
+  {% endif %}
   </div>
 
   <div class="schedule">

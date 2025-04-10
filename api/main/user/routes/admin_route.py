@@ -9,7 +9,7 @@ admin_blueprint = Blueprint('admin',  __name__, "api/admin")
 
 
 @admin_blueprint.route('/addsermon', methods=['POST'])
-# @token_required
+@token_required
 def add_sermon():
     if request.method == 'POST':
         return upload_sermon()
@@ -18,7 +18,6 @@ def add_sermon():
     
     
 @admin_blueprint.route('/pr', methods=['POST'])
-@token_required
 def prayer_request():
     if request.method == 'POST':
         return send_prayer_request()
@@ -27,7 +26,6 @@ def prayer_request():
     
 
 @admin_blueprint.route('/meeting', methods=['POST'])
-@token_required
 def new_meeting():
     if request.method == 'POST':
         return schedule_meeting()
@@ -36,7 +34,6 @@ def new_meeting():
     
     
 @admin_blueprint.route('/testimony', methods=['POST'])
-@token_required
 def testimony():
     if request.method == 'POST':
         return share_testimony()
@@ -44,7 +41,7 @@ def testimony():
         return "Sharing Testimony Failed"
     
 @admin_blueprint.route('/events', methods=['POST'])
-# @token_required
+@token_required
 def upcoming_events():
     if request.method == 'POST':
         return create_event()
@@ -53,7 +50,7 @@ def upcoming_events():
     
     
 @admin_blueprint.route('/daily_prayer', methods=['POST'])
-# @token_required
+@token_required
 def daily_prayer():
     if request.method == 'POST':
         return pray_daily()
@@ -62,7 +59,7 @@ def daily_prayer():
     
     
 @admin_blueprint.route('/service', methods=['POST'])
-# @token_required
+@token_required
 def last_service():
     if request.method == 'POST':
         return service()

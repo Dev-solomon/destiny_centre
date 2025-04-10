@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+{% include 'head.html' %}
+
+<body>
+
+    <header style="background-color: #4a0404;">
+        {% include 'link.html' %}
+
+    </header>
+
+
+    <h3 style="text-align: center;">YOUR'RE CURRENTLY IN THE ADMIN PORTAL</h3>
+
+    <div class="list-group container">
+        <button type="button" class="list-group-item list-group-item-action" disabled>Select Any Links</button>
+
+        <button type="button" class="list-group-item list-group-item-action">
+            <a href="/addsermon" class="ad">Add New Sermon</a>
+        </button>
+        <button type="button" class="list-group-item list-group-item-action">
+            <a href="/addevent" class="ad">Update Upcoming Event</a>
+        </button>
+        <button type="button" class="list-group-item list-group-item-action">
+            <a href="/addprayer" class="ad">Add Today's Daily Prayer</a>
+        </button>
+        <button type="button" class="list-group-item list-group-item-action">
+            <a href="/addservice" class="ad">Add New Home Video</a>
+        </button>
+    </div>
+
+    <div> <a href="/" style="float: right; padding: 10px 20px;color: #4a0404;; font-size: 40px;"aria-label="homepage"><i class="bi bi-house-check-fill"></i></a></div>
+
+    <style>
+        .ad {
+            text-decoration: none;
+            color: #4a0404;
+            font-size: 18px;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        }
+        .ad:hover{
+            text-decoration: none;
+            color: green !important;
+            font-size: 18px;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        }
+        .list-group{
+            padding: 20px;
+        }
+    </style>
+
+
+
+
+
+
+
+
+
+    <script src="../static/index.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

@@ -17,7 +17,7 @@ from main.tools import upload_sermon_image
 
 def upload_sermon():
     try:
-        data = request.get_json()
+        data = request.form.to_dict()
         files = request.files.get('image')
         
         # code for saving file uploaded in profile

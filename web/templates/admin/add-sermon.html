@@ -102,26 +102,24 @@
             const _title = document.getElementById("_title").value;
             const _speaker = document.getElementById("_speaker").value;
             const _link = document.getElementById("_link").value;
-            const _file = document.getElementById("_file").value;
-            // console.log(htmlContent);  // This will print the editor's content
+            const _file = document.getElementById("_file").files[0];
+            // console.log(_file);  // This will print the editor's content
+
+            const formData = new FormData();
+            formData.append("title", _title);
+            formData.append("speaker", _speaker);
+            formData.append("audio", _link);
+            formData.append("image", _file);  // <== sending the file itself
+            formData.append("message", htmlContent);
 
             // You can send htmlContent to your backend using fetch or AJAX here
             fetch('/api/admin/addsermon', {
                 method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify({
-                    title: _title,
-                    speaker: _speaker,
-                    audio: _link,
-                    image: _file,
-                    message: htmlContent
-                })
+                body: formData
             })
                 .then(response => response.text())
                 .then(data => {
-                    console.log(data);
+                    // console.log(data);
                     switch (data) {
                         case "Error Added New Sermon, Try again!":
                             document.getElementById('blogdiv').innerHTML = "Error Added New Sermon, Try again!";

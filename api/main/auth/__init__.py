@@ -25,7 +25,7 @@ def token_required(f):
 		access_token = request.cookies.get('token')
   
 		if not access_token:
-			return render_template('login.html')
+			return render_template('admin/admin.html')
 
 		if access_token:
 			try:
