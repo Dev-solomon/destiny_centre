@@ -10,6 +10,6 @@ cloudinary
 Flask-OAuthlib
 Authlib
 pymongo
-jwt
+PyJWT
 flask_caching
 pytz

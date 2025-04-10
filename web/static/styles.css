@@ -1008,7 +1008,31 @@ div.dandt > div input{
 .m3{
   display: none;
 }
-
+form.login{
+  border: 1px solid #4a0404;
+  padding: 20px 40px;
+  border-radius: 12px;
+}
+form.login button{
+  width: 100px;
+  margin: 5px;
+  background-color: #4a0404;
+  border: 1px solid #4a0404;
+  outline: none;
+}
+form.login button:hover{
+  background-color: green;
+  outline: none;
+  border: 1px solid green;
+}
+form.login input{
+  border: 1px solid grey;
+}
+form.login input:focus{
+  border: 3px solid #4a0404;
+  outline: none;
+  box-shadow: none;
+}
 
 
 
@@ -3057,5 +3081,10 @@ div.dandt > div input{
 }
 .m3{
   display: none;
+}
+form.login{
+  border: none;
+  padding: 20px 40px;
+  border-radius: 12px;
 }
 }

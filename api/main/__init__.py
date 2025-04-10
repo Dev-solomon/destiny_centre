@@ -38,10 +38,10 @@ def create_app():
     # EXPORTS FUNCTIONS END
     
     # blueprints for user routes
-    # from main.user.routes.user_route import user_blueprint
+    from main.user.routes.user_route import user_blueprint
 
   # Register User Blueprints
-  # app.register_blueprint(user_blueprint, url_prefix="/api/user")
+    app.register_blueprint(user_blueprint, url_prefix="/api/user")
   
   
   
@@ -52,6 +52,17 @@ def create_app():
     def home():
       # Render the page home
       return render_template('index.html')
+    
+    # Index Route
+    @app.route("/login")
+    def login():
+      # Render the page home
+      return render_template('login.html')
+    
+    @app.route("/signup")
+    def signup():
+      # Render the page home
+      return render_template('signup.html')
     
     # About us page
     @app.route("/about")
@@ -76,7 +87,7 @@ def create_app():
     @app.route('/clear_cache')
     def clear_cache():
       cache.clear()  # Clears the entire cache
-      return 'Cache cleared!' 
+      return "Cache cleared!" 
     
   
   

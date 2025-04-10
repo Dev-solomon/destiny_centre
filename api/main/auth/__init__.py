@@ -52,24 +52,7 @@ def token_required(f):
 
 	return decorated
 
-def admin_required(f):
-	@wraps(f)
-	def decorated(*args, **kwargs):
-		access_token = request.cookies.get('token')
-		# print(access_token)
-  
-		if not access_token:
-			return make_response(redirect(url_for('user_login'))) 
 
-		try:
-			data = jwt.decode(access_token, app.config['SECRET_KEY'],  algorithms=["HS256"])
-			current_user = User.collection.find_one({'user': data })
-		except Exception as e:
-			return JsonResp({ "message": "Token is invalid", "exception": str(e) }, 401)
-
-		return f(*args, **kwargs)	
-
-	return decorated
 
 def set_cookies(token, redirect_url):
   resp = make_response(redirect(url_for(redirect_url))) 
@@ -89,34 +72,3 @@ def encodeAccessToken(email):
 	}, app.config["SECRET_KEY"], algorithm="HS256")
 
 	return accessToken
-
-def encodeRefreshToken(email):
-
-	refreshToken = jwt.encode({
-		"email": email,
-		"exp": datetime.datetime.utcnow() + datetime.timedelta(hours=1) # The token will expire in 4 weeks
-	}, app.config["SECRET_KEY"], algorithm="HS256")
-
-	return refreshToken
-
-def refreshAccessToken(refresh_token):
-
-	# If the refresh_token is still valid, create a new access_token and return it
-	try:
-		user = app.db.users.find_one({ "refresh_token": refresh_token }, { "_id": 0, "id": 1, "email": 1 })
-
-		if user:
-			decoded = jwt.decode(refresh_token, app.config["SECRET_KEY"])
-			new_access_token = encodeAccessToken(decoded["email"])
-			result = jwt.decode(new_access_token, app.config["SECRET_KEY"])
-			result["new_access_token"] = new_access_token
-			resp = JsonResp(result, 200)
-		else:
-			result = { "message": "Auth refresh token has expired" }
-			resp = JsonResp(result, 403)
-
-	except:
-		result = { "message": "Auth refresh token has expired" }
-		resp = JsonResp(result, 403)
-
-	return resp
