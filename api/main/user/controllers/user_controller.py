@@ -23,7 +23,7 @@ def login():
         
         if user and bcrypt.check_password_hash(user['password'], data['password']):
             token = encodeAccessToken(user['email'])
-            return set_cookies(token, 'home')
+            return set_cookies(token, 'admin')
         else:
              return "Invalid Credentials, Try Again!"
     except Exception as e:
