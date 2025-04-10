@@ -10,7 +10,7 @@ admin_blueprint = Blueprint('admin',  __name__, "api/admin")
 
 @admin_blueprint.route('/addsermon', methods=['POST'])
 @token_required
-def add_sermon():
+def add_sermon(current_user):
     if request.method == 'POST':
         return upload_sermon()
     else:
@@ -42,7 +42,7 @@ def testimony():
     
 @admin_blueprint.route('/events', methods=['POST'])
 @token_required
-def upcoming_events():
+def upcoming_events(current_user):
     if request.method == 'POST':
         return create_event()
     else:
@@ -51,7 +51,7 @@ def upcoming_events():
     
 @admin_blueprint.route('/daily_prayer', methods=['POST'])
 @token_required
-def daily_prayer():
+def daily_prayer(current_user):
     if request.method == 'POST':
         return pray_daily()
     else:
@@ -60,7 +60,7 @@ def daily_prayer():
     
 @admin_blueprint.route('/service', methods=['POST'])
 @token_required
-def last_service():
+def last_service(current_user):
     if request.method == 'POST':
         return service()
     else:

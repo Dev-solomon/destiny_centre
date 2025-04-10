@@ -13,7 +13,8 @@ user_blueprint = Blueprint('user',  __name__, "api/user")
 
 
 @user_blueprint.route('/registration', methods=['POST','GET'])
-def registration():
+@token_required
+def registration(current_user):
     if request.method == 'POST':
         return register_user()
     else:

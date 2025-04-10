@@ -68,7 +68,7 @@ def create_app():
     
     @app.route("/signup")
     @token_required
-    def signup():
+    def signup(current_user):
       # Render the page home
       return render_template('signup.html')
     
@@ -87,31 +87,31 @@ def create_app():
     # Add Sermons Page
     @app.route("/addsermon")
     @token_required
-    def addsermon():
+    def addsermon(current_user):
       return render_template('admin/add-sermon.html')
     
     # add events page
     @app.route("/addevent")
     @token_required
-    def addevent():
+    def addevent(current_user):
       return render_template('admin/add-event.html')
     
     # add prayer page
     @app.route("/addprayer")
     @token_required
-    def addprayer():
+    def addprayer(current_user):
       return render_template('admin/add-prayer.html')
     
      # admn portal
     @app.route("/adminportal")
     @token_required
-    def admin():
+    def admin(current_user):
       return render_template('admin/admin.html')
     
     # add last service to homepage
     @app.route("/addservice")
     @token_required
-    def past_service():
+    def past_service(current_user):
       return render_template('admin/add-service.html')
     
     @app.route("/sermon/<string:sid>")
