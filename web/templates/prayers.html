@@ -31,18 +31,18 @@
         </div>
 
 
-        <form action="" class="request-prayer">
+        <form action="/api/admin/pr" method="post" class="request-prayer">
             <div>
                 <label for="name">Name</label>
-                <input class="input-details" type="text" placeholder="Calister John">
+                <input class="input-details" name="name" type="text" placeholder="Calister John">
             </div>
             <div>
                 <label for="name">Email Address</label>
-                <input class="input-details" type="text" placeholder="example@gmail.com">
+                <input class="input-details" name="email" type="text" placeholder="example@gmail.com">
             </div>
             <div>
                 <label for="name">Prayer Request</label>
-                <textarea class="pr" name="" id="" placeholder="Enter your prayer request here"></textarea>
+                <textarea class="pr" name="pr" id="" placeholder="Enter your prayer request here"></textarea>
             </div>
             <button class="btn-form">Send Prayer Request</button>
         </form>
@@ -59,41 +59,42 @@
         </div>
 
 
-        <form action="" class="Schedule-meet">
+        <form action="/api/admin/meeting" method="post" class="Schedule-meet">
             <div>
                 <label for="name">Meeting Type</label>
-                <select name="" id="" class="input-details">
+                <select name="meeting_type" id="" class="input-details">
                     <option selected>Select a Type of Meeting</option>
-                    <option value="phone-call">Phone Call</option>
-                    <option value="video-call">Video Call</option>
-                    <option value="physical">Physical Meet</option>
+                    <option value="Phone Call">Phone Call</option>
+                    <option value="Video Call">Video Call</option>
+                    <option value="P    hysical">Physical Meet</option>
                 </select>
             </div>
             <div>
                 <label for="name">Name</label>
-                <input class="input-details" type="text" placeholder="Calister John">
+                <input class="input-details" name="name" type="text" placeholder="Calister John">
             </div>
             <div>
                 <label for="name">Email Address</label>
-                <input class="input-details" type="text" placeholder="example@gmail.com">
+                <input class="input-details" name="email" type="text" placeholder="example@gmail.com">
             </div>
             <div>
                 <label for="name">Phone Number</label>
-                <input class="input-details" type="text" placeholder="Enter your phone number here">
+                <input class="input-details" name="phone" type="text" placeholder="Enter your phone number here">
             </div>
             <div class="dandt">
                 <div>
                     <label for="name"><i class="bi bi-calendar" style="color: rgb(30, 255, 0);"></i> Date</label>
-                    <input class="input-details" type="date" placeholder="Date Availability">
+                    <input class="input-details" name="date_schedule" type="date" placeholder="Date Availability">
                 </div>
                 <div>
                     <label for="name"><i class="bi bi-clock" style="color: rgb(30, 255, 0);"></i> Time</label>
-                    <input class="input-details" type="time" placeholder="Time of the Day">
+                    <input class="input-details" name="time" type="time" placeholder="Time of the Day">
                     
                 </div>
             </div>
+            <button class="btn-form">Schedule Meeting</button>
         </form>
-        <button class="btn-form">Schedule Meeting</button>
+        
     </div>
 
 
@@ -106,18 +107,18 @@
         </div>
 
 
-        <form action="" class="share-t">
+        <form action="/api/admin/testimony" method="post" class="share-t">
             <div>
                 <label for="name">Name</label>
-                <input class="input-details" type="text" placeholder="Calister John">
+                <input class="input-details" name="name" type="text" placeholder="Calister John">
             </div>
             <div>
                 <label for="name">Email Address</label>
-                <input class="input-details" type="text" placeholder="example@gmail.com">
+                <input class="input-details" name="email" type="text" placeholder="example@gmail.com">
             </div>
             <div>
                 <label for="name">Testimony</label>
-                <textarea class="pr" name="" id="" placeholder="Enter your testimony here"></textarea>
+                <textarea class="pr" name="testimony" id="" placeholder="Enter your testimony here"></textarea>
             </div>
             <button class="btn-form">Share Testimony</button>
         </form>

@@ -9,6 +9,7 @@ function change_modal(event){
         grandparentDiv.style.display = "none";
         for (let i=0; i < show_modal.length; i++){
             show_modal[i].style.display = "block";
+            // show_modal[i].pointerEvents = "auto"; // Enable interaction
         }
     }
     else{

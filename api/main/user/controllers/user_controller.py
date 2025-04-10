@@ -27,7 +27,8 @@ def login():
         else:
              return "Invalid Credentials, Try Again!"
     except Exception as e:
-        return jsonify({'message': str(e)})
+        # return jsonify({'message': str(e)})
+        return "Contact Tech Support For Help"
     
 
 

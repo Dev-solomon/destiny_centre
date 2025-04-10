@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="en">
+{% include 'head.html' %}
+
+<body>
+
+    <header style="background-color: #4a0404;">
+        {% include 'link.html' %}
+
+    </header>
+    <div id="blogdiv" class="message"> </div>
+    <style>
+        .message#blogdiv {
+            background-color: grey;
+            color: white;
+            text-align: center;
+            max-width: fit-content;
+            padding: 20px;
+        }
+    </style>
+    <h2 style="text-align: center;">ADD A NEW UPCOMING EVENT HERE</h2>
+
+    <div class="blog_contents">
+        <div class="blog_titles">
+            <label for="title">TITLE:</label>
+            <input type="text" id="_title" placeholder="I'll put the title here...">
+        </div>
+
+        <div class="blog_category">
+            <label for="category">LOCATION:</label>
+            <input type="text" id="_location" placeholder="Where is event happening?">
+        </div>
+
+        <div class="blog_image">
+            <label for="image"> DATE:</label>
+            <input type="date" id="_date" placeholder="What date is the event?">
+        </div>
+
+
+        <div class="blog_keywords">
+            <label for="keywords"> TIME:</label>
+            <input type="time" id="_time" placeholder="Event Starts When?" style="height: min-content !important;">
+        </div>
+
+        <!-- <div id="editor" height="200px"> -->
+    </div>
+
+    </div>
+
+
+
+
+
+
+
+    <button id="save-quill">Add Event</button>
+
+
+
+
+
+
+
+
+    <!-- footer here -->
+    {% include 'footer.html' %}
+    <!-- Include the Quill library -->
+    <script src="https://cdn.jsdelivr.net/npm/quill@2.0.3/dist/quill.js"></script>
+
+    <!-- Initialize Quill editor -->
+    <script>
+        // const options = {
+        //     debug: 'info',
+        //     modules: {
+        //         syntax: true,
+        //         toolbar: [
+        //             [{ font: [] }, { size: [] }],
+        //             ['bold', 'italic', 'underline', 'strike'],
+        //             [{ color: [] }, { background: [] }],
+        //             [{ script: 'super' }, { script: 'sub' }],
+        //             [{ header: 1 }, { header: 2 }, 'blockquote', 'code-block'],
+        //             [{ list: 'ordered' }, { list: 'bullet' }, { indent: '-1' }, { indent: '+1' }],
+        //             ['direction', { align: [] }],
+        //             ['link', 'image', 'video', 'formula'],
+        //             ['clean']
+        //         ]
+        //     },
+        //     placeholder: 'Type Your Contents Here ...',
+        //     theme: 'snow'
+        // };
+
+        // var quill = new Quill('#editor', options);
+
+        // Function to get Quill content dynamically
+        document.getElementById('save-quill').addEventListener('click', function () {
+            // const htmlContent = quill.root.innerHTML;
+            const _title = document.getElementById("_title").value;
+            const _location = document.getElementById("_location").value;
+            const _date = document.getElementById("_date").value;
+            const _time = document.getElementById("_time").value;
+
+            // You can send htmlContent to your backend using fetch or AJAX here
+            fetch('/api/admin/events', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    title: _title,
+                    location: _location,
+                    date: _date,
+                    time: _time
+                })
+            })
+                .then(response => response.text())
+                .then(data => {
+                    switch (data) {
+                        case "Event Addition Failed, Try again!":
+                            document.getElementById('blogdiv').innerHTML = "Event Addition Failed, Try again!";
+                            break;
+                        case "You Have Added A New Event":
+                            document.getElementById('blogdiv').innerHTML = "You Have Added A New Event";
+                            break;
+                        case "New Event Couldn't be Added":
+                            document.getElementById('blogdiv').innerHTML = "New Event Couldn't be Added";
+                            break;
+                        default:
+                            window.location.pathname = "/login";
+                    }
+
+                })
+                .catch((error) => {
+                    console.error('Error:', error)
+                });
+        });
+
+    </script>
+
+    <script src="../static/index.js"></script>
+</body>
+
+</html>

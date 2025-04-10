@@ -1,7 +1,7 @@
 from flask import current_app as app
 from pytz import timezone, UTC
 from datetime import timedelta
-import time, datetime
+import datetime
 import random
 import uuid
 import cloudinary
@@ -64,7 +64,8 @@ cloudinary.config(
        api_secret=os.getenv('cloudinary_api_secret')
 )
 
-def upload_image(file_path):
+# this is for sermon upload image through api
+def upload_sermon_image(file_path):
 # Example usage
 # uploaded_image_url = upload_image("path/to/your/image.jpg")
 
@@ -75,7 +76,7 @@ def upload_image(file_path):
 # response = cloudinary.uploader.upload("path/to/image.jpg", folder="my_images", tags=["sample", "test"])
     try: 
         # Upload the image to Cloudinary
-        response = cloudinary.uploader.upload(file_path, folder="products_images")
+        response = cloudinary.uploader.upload(file_path, folder="destiny_centre/images")
         
         # Get the URL of the uploaded image
         url = response.get("url")
@@ -83,28 +84,21 @@ def upload_image(file_path):
         return url
     except Exception as e:
         print("Error on uploading file.")
-        return 'Error on uploading file.'
-    
-def upload_profile_image(file_path):
-# Example usage
-# uploaded_image_url = upload_image("path/to/your/image.jpg")
+        return False
 
-# Upload from a remote URL
-# response = cloudinary.uploader.upload("https://example.com/image.jpg")
-
-# Upload with options (e.g., specifying a folder or tags)
-# response = cloudinary.uploader.upload("path/to/image.jpg", folder="my_images", tags=["sample", "test"])
+# this is for a sermon audio upload through api 
+def upload_single_sermon(file_path):
     try:
         # Upload the image to Cloudinary
-        response = cloudinary.uploader.upload(file_path, folder="profile_images")
+        response = cloudinary.uploader.upload(file_path, folder="destiny_centre/audios")
         
         # Get the URL of the uploaded image
         url = response.get("url")
-        print(f"Image uploaded successfully: {url}")
+        print(f"Sermon Audio successfully: {url}")
         return url
     except Exception as e:
         print("Error on uploading file.")
-        return 'Error on uploading file.'
+        return False
 	
  
 

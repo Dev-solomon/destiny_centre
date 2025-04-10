@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+{% include 'head.html' %}
+
+<body>
+
+    <header style="background-color: #4a0404;">
+        {% include 'link.html' %}
+
+    </header>
+    <div id="blogdiv" class="message"> </div>
+    <style>
+        .message#blogdiv {
+            background-color: grey;
+            color: white;
+            text-align: center;
+            max-width: fit-content;
+            padding: 20px;
+        }
+    </style>
+    <h2 style="text-align: center;">ADD A NEW UPCOMING EVENT HERE</h2>
+
+    <form action="/api/admin/service" method="post" enctype="multipart/form-data">
+
+        <div class="blog_contents">
+            <div class="blog_titles">
+                <label for="title">VIDEO-LINK:</label>
+                <input type="text" name="service" id="_title" placeholder="I'll put the title here...">
+            </div>
+
+        </div>
+
+        </div>
+
+
+
+
+
+
+
+        <button id="save-quill">Post Sunday's Video</button>
+
+
+
+    </form>
+
+
+
+
+
+
+
+
+
+    <!-- footer here -->
+    {% include 'footer.html' %}
+
+    <script src="../static/index.js"></script>
+</body>
+
+</html>

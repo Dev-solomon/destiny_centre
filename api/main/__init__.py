@@ -4,7 +4,7 @@ from pymongo import MongoClient
 import jwt
 import os
 from flask_caching import Cache
-import datetime
+
 
 
 
@@ -34,14 +34,17 @@ def create_app():
       # Import Routes
   with app.app_context():
     # EXPORTS FUNCTIONS START
+    from main.auth import token_required
     
     # EXPORTS FUNCTIONS END
     
     # blueprints for user routes
     from main.user.routes.user_route import user_blueprint
+    from main.user.routes.admin_route import admin_blueprint
 
   # Register User Blueprints
     app.register_blueprint(user_blueprint, url_prefix="/api/user")
+    app.register_blueprint(admin_blueprint, url_prefix="/api/admin")
   
   
   
@@ -73,6 +76,30 @@ def create_app():
     @app.route("/sermons")
     def sermons():
       return render_template('sermons.html')
+    
+    # Add Sermons Page
+    @app.route("/addsermon")
+    # @token_required
+    def addsermon():
+      return render_template('admin/add-sermon.html')
+    
+    # add events page
+    @app.route("/addevent")
+    # @token_required
+    def addevent():
+      return render_template('admin/add-event.html')
+    
+    # add prayer page
+    @app.route("/addprayer")
+    # @token_required
+    def addprayer():
+      return render_template('admin/add-prayer.html')
+    
+    # add last service to homepage
+    @app.route("/addservice")
+    # @token_required
+    def past_service():
+      return render_template('admin/add-service.html')
     
     @app.route("/sermon/<string:sid>")
     def sermon(sid):  # Include 'sid' as a parameter

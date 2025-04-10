@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+{% include 'head.html' %}
+
+<body>
+
+    <header style="background-color: #4a0404;">
+        {% include 'link.html' %}
+
+    </header>
+    <div id="blogdiv" class="message"> </div>
+    <style>
+        .message#blogdiv {
+            background-color: grey;
+            color: white;
+            text-align: center;
+            max-width: fit-content;
+            padding: 20px;
+        }
+    </style>
+    <h2 style="text-align: center;">ADD A NEW UPCOMING EVENT HERE</h2>
+
+    <form action="/api/admin/daily_prayer" method="post" enctype="multipart/form-data">
+
+        <div class="blog_contents">
+            <div class="blog_titles">
+                <label for="title">VERSE:</label>
+                <input type="text" name="verse" id="_title" placeholder="I'll put the title here...">
+            </div>
+
+            <div class="blog_category">
+                <label for="category">IMAGE:</label>
+                <input type="file" name="image" id="_location" placeholder="Where is event happening?">
+            </div>
+
+            <div class="blog_keywords">
+                <label for="keywords"> PRAYER:</label>
+                <input type="text" name="prayer" id="_time" placeholder="Write Daily Prayer Here">
+            </div>
+
+        </div>
+
+        </div>
+
+
+
+
+
+
+
+        <button id="save-quill">Post Today's Prayer</button>
+
+
+
+    </form>
+
+
+
+
+
+
+
+
+
+    <!-- footer here -->
+    {% include 'footer.html' %}
+
+    <script src="../static/index.js"></script>
+</body>
+
+</html>

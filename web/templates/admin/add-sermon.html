@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="en">
+{% include 'head.html' %}
+
+<body>
+
+    <header style="background-color: #4a0404;">
+        {% include 'link.html' %}
+
+    </header>
+    <div id="blogdiv" class="message"> </div>
+    <style>
+        .message#blogdiv {
+            background-color: grey;
+            color: white;
+            text-align: center;
+            max-width: fit-content;
+            padding: 20px;
+        }
+    </style>
+    <h2 style="text-align: center;">ADD A NEW SERMON TO DATABASE...</h2>
+
+    <div class="blog_contents">
+        <div class="blog_titles">
+            <label for="title">TITLE:</label>
+            <input type="text" id="_title" placeholder="I'll put the title here ...">
+        </div>
+
+        <div class="blog_category">
+            <label for="category"> SPEAKER:</label>
+            <input type="text" id="_speaker" placeholder="Who preached this sermon">
+        </div>
+
+        <div class="blog_image">
+            <label for="image"> LINK:</label>
+            <input type="text" id="_link" placeholder="Add the audio link here ...">
+        </div>
+
+        <div class="blog_image">
+            <label for="image"> IMAGE:</label>
+            <input type="file" id="_file" placeholder="Add the audio link here ..." style="border: none !important;">
+        </div>
+
+
+        <!-- <div class="blog_keywords">
+            <label for="keywords"> BLOG-KEYWORDS:</label>
+            <input type="text" id="blog_keywords" placeholder="Enter Keywords for search here">
+        </div> -->
+
+        <div id="editor" height="200px">
+        </div>
+
+    </div>
+
+
+
+
+
+
+
+    <button id="save-quill">Add Sermon</button>
+
+
+
+
+
+
+
+
+    <!-- footer here -->
+    {% include 'footer.html' %}
+    <!-- Include the Quill library -->
+    <script src="https://cdn.jsdelivr.net/npm/quill@2.0.3/dist/quill.js"></script>
+
+    <!-- Initialize Quill editor -->
+    <script>
+        const options = {
+            debug: 'info',
+            modules: {
+                syntax: true,
+                toolbar: [
+                    [{ font: [] }, { size: [] }],
+                    ['bold', 'italic', 'underline', 'strike'],
+                    [{ color: [] }, { background: [] }],
+                    [{ script: 'super' }, { script: 'sub' }],
+                    [{ header: 1 }, { header: 2 }, 'blockquote', 'code-block'],
+                    [{ list: 'ordered' }, { list: 'bullet' }, { indent: '-1' }, { indent: '+1' }],
+                    ['direction', { align: [] }],
+                    ['link', 'image', 'video', 'formula'],
+                    ['clean']
+                ]
+            },
+            placeholder: 'Type Your Contents Here ...',
+            theme: 'snow'
+        };
+
+        var quill = new Quill('#editor', options);
+
+        // Function to get Quill content dynamically
+        document.getElementById('save-quill').addEventListener('click', function () {
+            const htmlContent = quill.root.innerHTML;
+            const _title = document.getElementById("_title").value;
+            const _speaker = document.getElementById("_speaker").value;
+            const _link = document.getElementById("_link").value;
+            const _file = document.getElementById("_file").value;
+            // console.log(htmlContent);  // This will print the editor's content
+
+            // You can send htmlContent to your backend using fetch or AJAX here
+            fetch('/api/admin/addsermon', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    title: _title,
+                    speaker: _speaker,
+                    audio: _link,
+                    image: _file,
+                    message: htmlContent
+                })
+            })
+                .then(response => response.text())
+                .then(data => {
+                    console.log(data);
+                    switch (data) {
+                        case "Error Added New Sermon, Try again!":
+                            document.getElementById('blogdiv').innerHTML = "Error Added New Sermon, Try again!";
+                            break;
+                        case "This Sermon Already Exists!":
+                            document.getElementById('blogdiv').innerHTML = "This Sermon Already Exists!";
+                            break;
+                        case "Sermon Added Sucessfully":
+                            document.getElementById('blogdiv').innerHTML = "Sermon Added Sucessfully";
+                            break;
+                        case "New Sermon Uploading Failed":
+                            document.getElementById('blogdiv').innerHTML = "New Sermon Uploading Failed";
+                            break;
+                        default:
+                            window.location.pathname = "/login";
+                    }
+
+                })
+                .catch((error) => {
+                    console.error('Error:', error)
+                });
+        });
+
+    </script>
+
+    <script src="../static/index.js"></script>
+</body>
+
+</html>
