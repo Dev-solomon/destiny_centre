@@ -1,0 +1,1 @@
+This is the folder for uploading temporary images and deleting them as well
