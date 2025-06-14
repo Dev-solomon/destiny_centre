@@ -79,7 +79,7 @@ def upload_sermon_image(file_path):
         response = cloudinary.uploader.upload(file_path, folder="destiny_centre/images")
         
         # Get the URL of the uploaded image
-        url = response.get("url")
+        url = response.get("secure_url")
         # print(f"Image uploaded successfully: {url}")
         return url
     except Exception as e:
