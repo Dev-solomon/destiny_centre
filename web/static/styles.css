@@ -840,12 +840,12 @@ div.audio audio {
   width: 800px;
 }
 
-p.sm-p {
-  padding: 20px 60px;
-  font-weight: 400;
-  color: #4F4F4F;
-  font-size: 24px;
-  line-height: 150%;
+p.ql-font-serif {
+  padding: 10px 30px !important;
+  font-weight: 400 !important;
+  color: #4F4F4F !important;
+  font-size: 16px !important;
+  line-height: 150% !important;
 }
 
 
@@ -1889,12 +1889,12 @@ div.audio audio {
   width: 400px;
 }
 
-p.sm-p {
-  padding: 20px 60px;
-  font-weight: 400;
-  color: #4F4F4F;
-  font-size: 20px;
-  line-height: 150%;
+p.ql-font-serif {
+  padding: 10px 30px !important;
+  font-weight: 400 !important;
+  color: #4F4F4F !important;
+  font-size: 16px !important;
+  line-height: 150% !important;
 }
 
 
