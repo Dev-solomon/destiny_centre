@@ -840,7 +840,7 @@ div.audio audio {
   width: 800px;
 }
 
-p.ql-font-serif {
+p span.ql-font-serif {
   padding: 10px 30px !important;
   font-weight: 400 !important;
   color: #4F4F4F !important;
@@ -1889,7 +1889,7 @@ div.audio audio {
   width: 400px;
 }
 
-p.ql-font-serif {
+p span.ql-font-serif {
   padding: 10px 30px !important;
   font-weight: 400 !important;
   color: #4F4F4F !important;
@@ -2918,7 +2918,7 @@ div.audio audio {
   width: 300px;
 }
 
-p.ql-font-serif {
+p span.ql-font-serif {
   padding: 10px 30px !important;
   font-weight: 400 !important;
   color: #4F4F4F !important;
