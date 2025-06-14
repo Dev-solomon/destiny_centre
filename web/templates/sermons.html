@@ -28,7 +28,7 @@
                         <div class="content">
                             <span class="time">&raquo; 30+ Mins</span>
                             <span class="topic">{{ sermon['title'] | upper }}</span>
-                            <span class="intro">{{sermon["message"] | safe | lower | truncate(80, True, '...')}}</span>
+                            <span class="intro">{{sermon["message"] | safe | upper | truncate(80, True, '...')}}</span>
                         </div>
                     </div>
                 </a>
