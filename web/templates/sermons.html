@@ -40,6 +40,10 @@
     <div class="pagination">
         {% if sermons != [] and sermons != none %}
         {% set page_num = request.args.get('page_num', 1) | int %}
+        {% set total_sermons = sermons[1] | int %}
+        {% set per_page = 9 %}
+        {% set total_pages = (total_sermons + per_page - 1) // per_page %}
+
 
         {% if page_num > 1 %}
         <button onclick="updatePageNumber({{ page_num - 1 }});">
@@ -48,25 +52,26 @@
         {% endif %}
 
         <div class="nums">
-            {% if page_num == 1 %}
-                <a class="active my-auto">{{page_num}}</a>
-            {% elif page_num > 1 and page_num <= 5 %}
+            {% if page_num >= 1 and page_num <= 5 %}
                 {% for num in range(1, page_num + 1) %}
                     {% if num == page_num %}
-                <a class="my-auto active">{{num}}</a>
-            {% else %}
-                <a href="/sermons?page_num={{num}}" class="my-auto">{{num}}</a>
-            {% endif %}
-            {% endfor %}
+                        <a class="my-auto active">{{num}}</a>
+                    {% else %}
+                        <a href="/sermons?page_num={{num}}" class="my-auto">{{num}}</a>
+                    {% endif %}
+                {% endfor %}
             {% elif page_num >  5 %}
-            <a href="/sermons?page_num={{page_num - 2}}" class="my-auto">{{page_num - 2}}</a>
-            <a href="/sermons?page_num={{page_num - 1}}" class="my-auto">{{page_num - 1}}</a>
-            <a class="my-auto">...</a>
-            <a class="my-auto active">{{page_num}}</a>
+                <a href="/sermons?page_num={{page_num - 2}}" class="my-auto">{{page_num - 2}}</a>
+                <a href="/sermons?page_num={{page_num - 1}}" class="my-auto">{{page_num - 1}}</a>
+                <a class="my-auto active">{{page_num}}</a>
+                <a class="my-auto">...</a>
+                    {% if page_num != total_pages %}
+                        <a href="/sermons?page_num={{total_pages}} class="my-auto active">{{total_pages}}</a>
+                    {% endif %}
             {% endif %}
         </div>
 
-        {% if page_num < sermons[1] | int %}
+        {% if page_num < total_pages %}
         <button onclick="updatePageNumber_nextButton()">
           Next  <i class="fa fa-arrow-right" aria-hidden="true"></i>
         </button>
