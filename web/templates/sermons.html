@@ -58,6 +58,9 @@
                         <a class="my-auto active">{{num}}</a>
                     {% else %}
                         <a href="/sermons?page_num={{num}}" class="my-auto">{{num}}</a>
+                        {% if page_num != total_pages %}
+                            <a href="/sermons?page_num={{total_pages}} class="my-auto active">{{total_pages}}</a>
+                        {% endif %}
                     {% endif %}
                 {% endfor %}
             {% elif page_num >  5 %}
