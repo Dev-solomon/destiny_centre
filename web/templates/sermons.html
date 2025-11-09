@@ -41,7 +41,7 @@
         {% if sermons != [] and sermons != none %}
         {% set page_num = request.args.get('page_num', 1) | int %}
 
-        {% if page_num >= 1 %}
+        {% if page_num > 1 %}
         <button onclick="updatePageNumber({{ page_num - 1 }});">
             <i class="fa fa-arrow-left" aria-hidden="true"></i> Previous
         </button>
