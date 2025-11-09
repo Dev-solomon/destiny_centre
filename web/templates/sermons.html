@@ -62,7 +62,7 @@
                 {% endfor %}
                 <a class="my-auto">...</a>
                 {% if page_num != total_pages %}
-                    <a href="/sermons?page_num={{total_pages}} class="my-auto active">{{total_pages}}</a>
+                    <a href="/sermons?page_num={{total_pages}} class="my-auto">{{total_pages}}</a>
                 {% endif %}
             {% elif page_num >  5 %}
                 <a href="/sermons?page_num={{page_num - 2}}" class="my-auto">{{page_num - 2}}</a>
@@ -71,7 +71,7 @@
                         <a class="my-auto active">{{page_num}}</a>
                 {% endif %}
                 <a class="my-auto">...</a>
-                <a href="/sermons?page_num={{total_pages}} class="my-auto active">{{total_pages}}</a>
+                <a href="/sermons?page_num={{total_pages}} class="my-auto">{{total_pages}}</a>
             {% endif %}
         </div>
 
