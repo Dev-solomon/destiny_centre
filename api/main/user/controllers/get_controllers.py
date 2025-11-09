@@ -50,7 +50,7 @@ def home_video():
     
 def get_sermons(pageNum):
     try:
-        pageSize = 9
+        pageSize = 1
         skip = (int(pageNum) - 1) * pageSize
         
          # Count the total number of matching products (for pagination calculation)
